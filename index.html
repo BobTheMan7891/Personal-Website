@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="images/favicon.jpg" class="circleImage">
+    <title>Oscar S</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+
+        <!-- Add neon glow and wave affect -->
+        <h1 class="header-text">Welcome!</h1>
+
+        <!-- Nav menu -->
+        <ul id="nav-menu">
+            <a href="index.html">
+                <li>
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="title">Home</span>
+                </li>
+            </a>
+
+            <a href="about.html">
+                <li>
+                    <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
+                    <span class="title">About</span>
+                </li>
+            </a>
+
+            <a href="contact.html">
+                <li>
+                    <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
+                    <span class="title">Contact</span>
+                </li>
+            </a>
+        </ul>
+
+        <!-- Ham menu and off screen menu -->
+        <div class="off-screen-menu">
+            <ul>
+                <a href="index.html"><li>Home</li></a>
+                <a href="about.html"><li>About</li></a>
+                <a href="contact.html"><li>Contact</li></a>
+            </ul>
+        </div>
+
+        <nav class="mobile-nav">
+            <div class="ham-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        
+        <!-- Overview cards (table) -->
+        <table border="1" id="overview-cards-desktop">
+            <tr>
+            
+                <!-- Profile card -->
+                <td rowspan="1" height="300">       
+                    <div id="profile-card">
+                        <div id="profile-banner"></div>  
+                        <img src="images/favicon.jpg" alt="portrait" id="profile-portrait">
+                        <h1 id="profile-text">Oscar Sutherland</h2>
+                    </div>
+                </td>
+
+                <!-- About card -->
+                <td rowspan="1" height="300">
+                    <div class="about-card">
+                        <h3 id="about-h3">About</h3> 
+                        <hr id="about-hr">
+                        <p id="about-p">
+                            I graduated from Nord Anglia International School Dubai in the 2025/26 academic year, where I completed three A-Levels in Computer Science, Business, and Physics, as well as an EPQ. This reflects my passion for technology and business. I have a strong entrepreneurial mindset, which has led me to seek a role where I can contribute meaningfully while gaining real-world experience.
+                        </p>
+                    </div>
+                </td>
+
+                <!-- Photo card -->
+                <td rowspan="3" height="600">
+                    <div id="photo-card" style="background-image: url(images/ue5environment.png);">
+
+                    </div>
+                </td>
+            
+            </tr>
+            <tr>
+
+                <!-- CV card -->
+                <td rowspan="1" height="200">
+                    <div id="cv-card">
+                        <h1 id="cv-h1">CV</h1>
+                        <button id="cv-download">Download</button>
+                    </div>
+                </td>
+
+                <!-- Skills card -->
+                <td rowspan="2" height="300"><div id="skills-card">Skills</div></td>
+
+            </tr>
+            <tr>
+
+                <!-- Contact card -->
+                <td height="100"><div id="contact-card">Contact</div></td>
+
+            </tr>
+        </table>
+
+    </main>
+
+    <footer>
+        <p>Site by Oscar Sutherland</p>
+        <p>email: <a href="mailto:oscarsutherland08@outlook.com" class="white-link">oscarsutherland08@outlook.com</a></p>
+        <p>&copy; All Rights Resvered 2026</p>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="images/favicon.jpg" class="circleImage">
+    <title>Oscar S</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body id="contact">
+    <header>
+
+        <!-- Add neon glow and wave affect -->
+        <h1 class="header-text">Welcome!</h1>
+
+        <!-- Nav menu -->
+        <ul id="nav-menu">
+            <a href="index.html">
+                <li>
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="title">Home</span>
+                </li>
+            </a>
+
+            <a href="about.html">
+                <li>
+                    <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
+                    <span class="title">About</span>
+                </li>
+            </a>
+
+            <a href="contact.html">
+                <li>
+                    <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
+                    <span class="title">Contact</span>
+                </li>
+            </a>
+        </ul>
+
+        <!-- Ham menu and off screen menu -->
+        <div class="off-screen-menu">
+            <ul>
+                <a href="index.html"><li>Home</li></a>
+                <a href="about.html"><li>About</li></a>
+                <a href="contact.html"><li>Contact</li></a>
+            </ul>
+        </div>
+
+        <nav class="mobile-nav">
+            <div class="ham-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+    </header>
+
+    <main id="contact">
+
+            <br>
+            <h2 id="contact-me">Contact Me</h2>
+            <br>
+
+        <form action="https://formsubmit.co/oscarsutherland08@outlook.com" method="post">
+
+            <div class="name-email-form">
+                <p>
+                    <label for="full-name">Full Name: *</label>
+                    <br>
+                    <input type="text" placeholder="John Smith" id="full-name" name="Name:" required>
+                </p>
+                <p>
+                    <label for="email">Email: *</label>
+                    <br>
+                    <input type="text" placeholder="johnsmith@gmail.com" id="email" name="Email" required>
+                </p>
+
+            </div>
+
+            <p>
+                <label for="message">Message: *</label>
+                <br>
+                <textarea name="Message" id="message" placeholder="Enter you message..." required></textarea>
+            </p>
+            
+            <nobr class="form-buttons">
+                <input type="reset" class="input-button">
+                <input type="submit" class="input-button">
+            </nobr>
+
+        </form>
+        <br>
+        <br>
+        <br>
+
+    </main>
+
+    <footer>
+        <p>Site by Oscar Sutherland</p>
+        <p>email: <a href="mailto:oscarsutherland08@outlook.com" class="white-link">oscarsutherland08@outlook.com</a></p>
+        <p>&copy; All Rights Resvered 2026</p>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
