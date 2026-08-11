@@ -199,6 +199,11 @@ td{
   left: 30px;
   overflow: hidden;
   border: 3px solid #3456D3;
+  background: #7fd1c1;
+  transition: 0.5s;
+}
+#profile-portrait:hover{
+  content: url("images/winking.png");
   background: #7fd1c1; /* fallback if no image */
 }
 #profile-text{
@@ -231,16 +236,18 @@ td{
   background-color: #272727;
   border-radius: 15px;
   margin: 0px;
-  padding: 20px;
-  align-content: center;
+  padding: 15px;
 }
 #cv-h1{
-  font-size: 4em;
+  font-size: 3em;
+  position: relative;
+  margin-top: auto;
 }
 #cv-download{
   position: relative;
   display: block;
-  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;  
   width: 100%;
   height: 50px;
   color: white;
@@ -285,25 +292,24 @@ td{
   opacity: 0;
   transition: 0.7s;
 }
-#cv-download.active::before{
+#cv-download.active::before, #cv-download:hover::before{
   opacity: 1;
 }
 #cv-download::after{
   content: '';
   position: absolute;
-  left: -4px;
-  bottom: -4px;
-  width: 110%;
-  height: 110%;
+  top: 10px;
+  left: 1%;
+  width: 100%;
+  height: 100%;
   border-radius: 60px;
   background: linear-gradient(45deg, #56CCF2, #2F80ED);
   transition: 0.5s;
-  transition-delay: 0.5s;
   filter: blur(15px);
   z-index: 0;
   opacity: 0;
 }
-#cv-download.active::after{
+#cv-download.active::after, #cv-download:hover::after{
   opacity: 0.5;
 }
 .progress-wrapper{
@@ -313,7 +319,7 @@ td{
   width: 100px;
   height: 100px;
   transform: translate(-50%, -50%) scale(0);
-  transition: 0.7s;
+  transition: 0.5s;
   transition-delay: 0.5s;
 }
 #cv-download.active .progress-wrapper{
@@ -324,52 +330,16 @@ td{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   background: #fff;
   border-radius: 50%;
   z-index: 2;
-  transition: 1s ease;
-  transition-delay: 4s;
+  transition: 0.5s ease;
+  transition-delay: 1s;
 }
 #cv-download.active .progress-wrapper .inner{
   transform: translate(-50%, -50%) scale(0);
-}
-.progress-wrapper .bar{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #ededed;
-  border-radius: 50%;
-  clip: rect(0px, 100px, 100px, 50px);
-}
-.circle .bar .progress{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #56CCF2, #3456D3);
-  border-radius: 50%;
-  clip: rect(0px, 50px, 100px, 0px);
-  z-index: 1;
-}
-.circle .bar.left .progress{
-  transition: 1.5s linear;
-  background: linear-gradient(45deg, #56CCF2, #3456D3);
-  transition-delay: 1s;
-}
-#cv-download.active .circle .bar.left .progress{
-  transform: rotate(180deg);
-}
-.circle .right{
-  transform: rotate(180deg);
-}
-.circle .bar.right .progress{
-  transition: 1.5s linear;
-  background: linear-gradient(45deg, #3456D3, #56CCF2);
-  transition-delay: 2.5s;
-}
-#cv-download.active .circle .bar.right .progress{
-  transform: rotate(180deg);
 }
 .progress-wrapper .checkmark{
   position: absolute;
@@ -386,14 +356,14 @@ td{
   background: #fff;
   border-radius: 5px;
   transform-origin: left;
-  transition: 0.5s;
+  transition: 0.1s;
 }
 .checkmark span:first-child{
   top: 45px;
   left: 22px;
   width: 30px;
   transform: rotate(45deg) scaleX(0);
-  transition-delay: 5s;
+  transition-delay: 1.5s;
 }
 #cv-download.active .checkmark span:first-child{
   transform: rotate(45deg) scaleX(1);
@@ -403,7 +373,7 @@ td{
   left: 40px;
   width: 50px;
   transform: rotate(-45deg) scaleX(0);
-  transition-delay: 5.5s;
+  transition-delay: 1.6s;
 }
 #cv-download.active .checkmark span:last-child{
   transform: rotate(-45deg) scaleX(1);
