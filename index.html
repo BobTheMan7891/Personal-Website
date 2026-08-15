@@ -9,9 +9,8 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
+    <header style="position: sticky; top: 0; z-index: 100;">
 
-        <!-- Add neon glow and wave affect -->
         <h1 class="header-text">Welcome!</h1>
 
         <!-- Nav menu -->
@@ -30,6 +29,13 @@
                 </li>
             </a>
 
+            <a href="portfolio.html">
+                <li>
+                    <span class="icon"><ion-icon name="briefcase-outline"></ion-icon></span>
+                    <span class="title">Portfolio</span>
+                </li>
+            </a>
+
             <a href="contact.html">
                 <li>
                     <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
@@ -43,6 +49,7 @@
             <ul>
                 <a href="index.html"><li>Home</li></a>
                 <a href="about.html"><li>About</li></a>
+                <a href="portfolio.html"><li>Portfolio</li></a>
                 <a href="contact.html"><li>Contact</li></a>
             </ul>
         </div>
@@ -55,6 +62,7 @@
             </div>
         </nav>
 
+
     </header>
 
     <main>
@@ -62,47 +70,51 @@
         <!-- Overview cards (table) -->
         <table border="1" id="overview-cards-desktop">
             <tr>
-            
                 <!-- Profile card -->
-                <td rowspan="1" height="300">       
-                    <div id="profile-card">
+                <td rowspan="1" height="350">
+                    <div id="profile-card" class="blue-card">
                         <div id="profile-banner"></div>  
                         <img src="images/favicon.jpg" alt="portrait" id="profile-portrait">
-                        <h1 id="profile-text">Oscar Sutherland</h2>
+                        <div id="profile-text">
+                            <h1 id="profile-h1">Oscar Sutherland</h1>
+                            <h1 id="job-title">Part-time jobs, internships & work experience</h1>
+                        </div>
                     </div>
                 </td>
 
                 <!-- About card -->
-                <td rowspan="1" height="300">
-                    <div class="about-card">
-                        <h3 id="about-h3">About</h3> 
+                <td rowspan="1" height="350">
+                    <div id="about-card" class="grey-card">
+                        <h1 id="about-h1">About</h1> 
                         <hr id="about-hr">
                         <p id="about-p">
                             I graduated from Nord Anglia International School Dubai in the 2025/26 academic year, where I completed three A-Levels in Computer Science, Business, and Physics, as well as an EPQ. This reflects my passion for technology and business. I have a strong entrepreneurial mindset, which has led me to seek a role where I can contribute meaningfully while gaining real-world experience.
                         </p>
+                        <a href="about.html">
+                            <button id="about-button" class="button1">
+                                <span>More...</span>
+                                <span class="icon"><ion-icon name="ellipsis-horizontal"></ion-icon></span>
+                            </button>
+                        </a>
                     </div>
                 </td>
 
                 <!-- Photo card -->
-                <td rowspan="3" height="600">
-                    <div id="photo-card" style="background-image: url(images/ue5environment.png);">
-
-                    </div>
+                <td rowspan="3" height="700">
+                    <div id="photo-card" style="background-image: url(images/neon-city.jpg);"></div>
                 </td>
-            
             </tr>
             <tr>
-
                 <!-- CV card -->
-                <td rowspan="1" height="200">
-                    <div id="cv-card">
+                <td rowspan="1" height="250">
+                    <div id="cv-card" class="grey-card">
                         <h1 id="cv-h1">CV</h1>
+                        <hr id="cv-hr">
                         <a href="Downloads/Oscar S CV.pdf" download>
-                            <button id="cv-download">
+                            <button id="cv-download" class="button1">
                                 <span>Download</span>
                                 <span class="icon"><ion-icon name="arrow-down-outline"></ion-icon></span>
                                 <div class="progress-wrapper">
-                                    <div class="inner"></div>
                                     <div class="checkmark">
                                         <span></span>
                                         <span></span>
@@ -114,22 +126,157 @@
                 </td>
 
                 <!-- Skills card -->
-                <td rowspan="2" height="300"><div id="skills-card">Skills</div></td>
+                <td rowspan="2" height="350">
+                    <div id="skills-card" class="blue-card">
+                        <h1 id="skills-h1">Skills</h1>
+                        <hr>
+                        <div id="skills-list">
+                            <div class="skills-pill">HTML, CSS & Javascript</div>
+                            <div class="skills-pill">Unreal Engine</div>
+                            <div class="skills-pill">Python</div>
+                            <div class="skills-pill">Microsoft Office</div>
+                            <div class="skills-pill">Research</div>
+                            <div class="skills-pill">Project Management</div>
+                            <div class="skills-pill">Teamwork</div>
+                            <div class="skills-pill">Independent Worker</div>
+                            <div class="skills-pill">Problem Solving</div>
+                        </div>
+                    </div>
+                </td>
 
             </tr>
             <tr>
 
                 <!-- Contact card -->
-                <td height="100"><div id="contact-card">Contact</div></td>
+                <td height="20">
+                    <div id="contact-card" class="grey-card">
+                        <ul class="contact-list">
+                            <li>
+                                <a href="https://wa.me/+971568157979" target="_blank">
+                                    <ion-icon name="logo-whatsapp" class="contact-card-icons"></ion-icon>
+                                    <div class="contact-outer"></div>
+                                    <div class="contact-inner"></div>
+                                    <ion-icon name="logo-whatsapp" class="contact-card-icons-hover"></ion-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/oscar-sutherland/" target="_blank">
+                                    <ion-icon name="logo-linkedin" class="contact-card-icons"></ion-icon>
+                                    <div class="contact-outer"></div>
+                                    <div class="contact-inner"></div>
+                                    <ion-icon name="logo-linkedin" class="contact-card-icons-hover"></ion-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://discordapp.com/users/793828638923161620" target="_blank">
+                                    <ion-icon name="logo-discord" class="contact-card-icons"></ion-icon>
+                                    <div class="contact-outer"></div>
+                                    <div class="contact-inner"></div>
+                                    <ion-icon name="logo-discord" class="contact-card-icons-hover"></ion-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:oscarsutherland08@outlook.com" target="_blank">
+                                    <ion-icon name="mail-open" class="contact-card-icons"></ion-icon>
+                                    <div class="contact-outer"></div>
+                                    <div class="contact-inner"></div>
+                                    <ion-icon name="mail-open-outline" class="contact-card-icons-hover"></ion-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/BobTheMan7891" target="_blank">
+                                    <ion-icon name="logo-github" class="contact-card-icons"></ion-icon>
+                                    <div class="contact-outer"></div>
+                                    <div class="contact-inner"></div>
+                                    <ion-icon name="logo-github" class="contact-card-icons-hover"></ion-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contact.html">
+                                    <ion-icon name="ellipsis-horizontal" class="contact-card-icons"></ion-icon>
+                                    <div class="contact-outer"></div>
+                                    <div class="contact-inner"></div>
+                                    <ion-icon name="ellipsis-horizontal" class="contact-card-icons-hover"></ion-icon>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
 
             </tr>
         </table>
 
     </main>
 
+    <section id="portfolio">
+        <div class="section-title">
+            <div>
+                <h1>Portfolio</h1>
+            </div>
+        </div>
+
+        <div id="portfolio-cards">
+            <div class="portfolio-card" id="nea-card">
+                <h1>Computer Science NEA</h1>
+                <hr class="portfolio-hr">
+                <p>
+                    This project is a significant piece of coursework as part of my A-Level Computer Science course. It challenged me to put my theoretical knowledge, learned from the A-Level course, into practice. My project tackled the issue of a lack of offline chess games that offer multiple chess variants and was accompanied by a document that went over the development process. This document included sections on initial planning, design, implementation and testing, which helped me sharpen my software design, problem-solving and programming skills.
+                </p>
+                <p>
+                    One challenge that I overcome as part of this project was implementing a login and sign-up system, including a local databse and password hashing. This was because the skills required for this went beyond my knowledge at the time. To resolve the issue I pushed myself to research and learn knew concepts independently, giving me a solid understanding of core security principals in software development.
+                </p>
+                <p style="font-weight: bold;">Exam board: AQA</p>
+                <p style="font-weight: bold;">Grade: A</p>
+                <br>
+                <a href="Downloads/NEA.docx" download>
+                    <button id="nea-button" class="button1">
+                        <span>Download</span>
+                        <span class="icon"><ion-icon name="arrow-down-outline"></ion-icon></span>
+                    </button>
+                </a>
+            </div>
+            <div class="portfolio-card" id="epq-card">
+                <h1>EPQ</h1>
+                <hr class="portfolio-hr">
+                <p>
+                    As optional, additional coursework during my A-Level study period, I completed an Extended Project Qualification (EPQ), producing an artefact that explores the evidence-based advantages of puzzle games. This involved researching studies on the cognitive and educational advantages/disadvantages of puzzle-based video games to better understand how they can support skills such as problem-solving. This research then applied to the development of my own puzzle game.
+                </p>
+                <p>
+                    This project strengthened my research skills, as I was required to evaluate numerous academic sources of information to construct a balanced argument of my own. Since the EPQ is to be completed independently, I developed valuable skills in project management as I planned my research and development process in order to meet deadlines. This was all done while balancing my other A-Level workload.
+                </p>
+                <p style="font-weight: bold;">Exam board: AQA</p>
+                <p style="font-weight: bold;">Grade: A*</p>
+                <br>
+                <a href="Downloads/Oscar Sutherland EPQ Report.docx" download>
+                    <button id="epq-button" class="button1">
+                        <span>Document</span>
+                        <span class="icon"><ion-icon name="arrow-down-outline"></ion-icon></span>
+                    </button>
+                </a>
+            </div>
+            <div class="portfolio-card" id="course-card">
+                <h1>This Website!</h1>
+                <hr class="portfolio-hr">
+                <p>
+                    This website was hand-coded and designed by me! HTML, CSS and Javascript are languages that I tought myself to build this website and open future career opportunities.
+                </p>
+                <p>
+                    The independent nature of learning these skills meant I was responsible for finding the right content to teach me and I needed to troubleshoot issues on my own. As a result, my confidence in using these languages to develop fully functional websites has been greatly improved, giving me experience in AAAAAAAAAAAAAAAAAA.
+                </p>
+                <br>
+                <a href="portfolio.html">
+                    <button id="course-button" class="button1">
+                        <span>More projects...</span>
+                        <span class="icon"><ion-icon name="ellipsis-horizontal"></ion-icon></span>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>Site by Oscar Sutherland</p>
         <p>email: <a href="mailto:oscarsutherland08@outlook.com" class="white-link">oscarsutherland08@outlook.com</a></p>
+        <p>Designed and hand-coded by Oscar Sutherland</p>
         <p>&copy; All Rights Reserved 2026</p>
     </footer>
 
