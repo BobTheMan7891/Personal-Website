@@ -4,7 +4,7 @@
   font-family: Arial, Verdana, Helvetica;
 }
 body{
-  margin: 0px;
+  margin: 0;
   padding: 0;
 }
 main{
@@ -14,6 +14,16 @@ main{
 }
 hr{
   width: 100%;
+}
+#preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #0b0b2b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
 /*#region About Page*/
@@ -36,11 +46,18 @@ html{
   width: 60%;
   height: 60%;
 }
+#about-snap-card{
+  margin-top: 70px;
+}
+#education-course-snap-card{
+  margin-top: 70px;
+}
+#other-snap-card{
+  margin-top: 70px;
+}
 #about-page main{
-  background-image: url(images/neon-city.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
   background-size: cover;
   transition: background-image 0.5s ease, background-color 0.6s ease;
 }
@@ -62,14 +79,21 @@ html{
 }
 .snap-cards-2{
   display: flex;
-  flex-direction: row;
   width: 60%;
   gap: 20px;
   height: 60%;
-
 }
 #education-card{
   height: 100%;
+}
+.snap-card, .snap-cards-2{
+  opacity: 0;
+  transition: .5s ease-out;
+  transform: scale(0.7);
+}
+.snap-section.is-visible .snap-card, .snap-section.is-visible .snap-cards-2{
+  opacity: 1;
+  transform: scale(1);
 }
 /*#endregion*/ 
 
@@ -262,18 +286,18 @@ header{
 }
 #contact-main{
   text-align: center;
-  background-image: url(images/portals.jpg);
+  background-image: url(images/waterfall.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
   flex: 1;
-  height: auto;
+  height: calc(100dvh - 70px);
+  justify-content: center;
+  align-items: center;
 }
-contact-page{
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
+#contact-div{
+  height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;
 }
 /* #endregion */
 
@@ -297,13 +321,14 @@ li{
 }
 /* #endregion */
 
+
 /* #region Tables */
 table{
   width: 100%;
   table-layout: fixed;
   background-color: transparent;
   border-color: transparent;
-  height: calc(100dvh - 80px);
+  height: calc(100dvh - 70px);
   max-height: 900px;
 }
 td{
@@ -394,12 +419,12 @@ td{
 }
 #profile-text{
   position: relative;
-  top: -80px;
+  top: -70px;
   left: 15px;
 }
 #profile-h1{
   position: relative;
-  font-size: 2.5em;
+  font-size: 2em;
   margin-bottom: 0;
 }
 #job-title{
@@ -546,6 +571,8 @@ td{
   position: relative;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
 }
 .contact-list{
   display: flex;
@@ -791,38 +818,37 @@ td{
 .section-title h1{
   margin: 0;
 }
-#portfolio > a{
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
 #portfolio-button{
   width: 33%;
 }
 #portfolio-button .icon{
   top: 20px;
 }
-#portfolio-cards{
-  display: flex;
-}
 .portfolio-card{
+  display: flex;
+  flex-direction: row;
+  background: #272727;
+  height: 500px;
+  width: 75%;
+  border-radius: 15px;
+  margin: 10px;
+  box-shadow: 0 0 10px #3456D3;
+  margin: 40px;
+}
+.portfolio-text{
   flex: 1;
-  height: auto;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  background: #272727;
+  margin: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+.portfolio-photo{
+  margin: 0;
   border-radius: 15px;
-  padding: 20px;
-  padding-top: 10px;
-  margin: 5px;
-  font-size: 1em;
-}
-#nea-card, #course-card{
-  box-shadow: 0 0 10px #3456D3;
-}
-#epq-card{
-  box-shadow: 0 0 10px #56CCF2;
+  width: 30%;
 }
 .portfolio-card > a{
   margin-top: auto;
@@ -844,6 +870,9 @@ td{
 /*#endregion*/
 
 /* #region Contact form */
+#form-title{
+  width: 100%;
+}
 #form-title div{
   width: 40%;
 }

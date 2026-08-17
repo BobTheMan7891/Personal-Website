@@ -7,8 +7,15 @@
     <title>Oscar S</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+
+
+
 </head>
 <body id="about-page">
+    <div id="preloader">
+      <div class="spinner"></div>
+    </div>
+
     <header style="position: sticky; top: 0; z-index: 100;">
 
         <h1 class="header-text">Welcome!</h1>
@@ -94,8 +101,8 @@
             </div>
         </section>
 
-        <section id="snapping" class="snap-section">
-            <div class="snap-cards-2">
+        <section class="snap-section">
+            <div id="education-course-snap-card" class="snap-cards-2">
                 <!-- Education card -->
                 <div class="snap-card" id="education-card">
                     <h1 id="about-h1">Education</h1> 
@@ -145,8 +152,8 @@
             </div>
         </section>
 
-        <section id="snapping" class="snap-section">
-            <div class="snap-cards-2">
+        <section class="snap-section">
+            <div id="other-snap-card" class="snap-cards-2">
                 <div class="snap-card list-card" style="width: 50%;">
                     <h1 id="about-h1">Hobbies</h1>
                     <hr id="about-hr">
@@ -179,7 +186,7 @@
                     </div>
                 </div>
                 <div style="display: flex;flex-direction: column; gap: 20px;">
-                    <div id="skills-card" class="blue-card">
+                    <div id="skills-card" class="blue-card snap-card">
                         <h1 id="skills-h1">Skills</h1>
                         <hr>
                         <div id="skills-list">
@@ -194,23 +201,7 @@
                             <div class="skills-pill">Problem Solving</div>
                         </div>
                     </div>
-                    <div id="cv-card" class="grey-card">
-                        <h1 id="cv-h1">CV</h1>
-                        <hr id="cv-hr">
-                        <a href="Downloads/Oscar S CV.pdf" download>
-                            <button id="cv-download" class="button1">
-                                <span>Download</span>
-                                <span class="icon"><ion-icon name="arrow-down-outline"></ion-icon></span>
-                                <div class="progress-wrapper">
-                                    <div class="checkmark">
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </button>
-                        </a>
-                    </div>
-                    <div id="contact-card" class="grey-card" style="height: 80px;">
+                    <div id="contact-card" class="blue-card snap-card" style="height: 80px;">
                         <ul class="contact-list">
                             <li>
                                 <a href="https://wa.me/+971568157979" target="_blank">
