@@ -61,6 +61,49 @@ html{
   background-size: cover;
   transition: background-image 0.5s ease, background-color 0.6s ease;
 }
+#snap-orangebg, #snap-naturebg, #snap-underwater{
+  position: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: -8px;
+  background-image: url(images/portals.jpg);
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  scale: 1;
+  transition: 0.5s ease;
+}
+#snap-orangebg{
+  background-image: url(images/portalsorange.jpg);
+  z-index: -1;
+}
+#snap-naturebg{
+  background-image: url(images/portalsnature.jpg);
+  z-index: -1;
+}
+#snap-underwater{
+  background-image: url(images/underwater.jpg);
+  z-index: -1;
+}
+#snap-orangebg.active{
+  background-image: url(images/portalsorange.jpg);
+  z-index: 0;
+  opacity: 1;
+  scale: 1.2;
+}
+#snap-naturebg.active{
+  background-image: url(images/portalsnature.jpg);
+  z-index: 0;
+  opacity: 1;
+  scale: 1.2;
+}
+#snap-underwater.active{
+  background-image: url(images/underwater.jpg);
+  z-index: 0;
+  opacity: 1;
+  scale: 1.2;
+}
 .list-card{
   display: flex;
   flex-direction: column;
@@ -176,6 +219,9 @@ header{
   height: 70px;
   border-bottom: 2px solid #3456D3;
   padding: 18px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 .header-text{
   display: inline;

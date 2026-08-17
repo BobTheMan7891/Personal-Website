@@ -18,28 +18,35 @@ if (cvDownloadButton) {
 }
 
 // Snapping
-const bgAbout = document.querySelector('#about-page > main')
-
 const sections = [
-    { threshold: 0,    image: 'url(images/portalsorange.jpg)' },
-    { threshold: 800,  image: 'url(images/portalsnature.jpg)' },
-    { threshold: 1200, image: 'url(images/underwater.jpg)' },
-  ];
+  { threshold: 0,    id: 'snap-orangebg' },
+  { threshold: 0.4,  id: 'snap-naturebg' },   // 40% down the page
+  { threshold: 0.7,  id: 'snap-underwater' }, // 70% down the page
+];
 
-  function updateBackground() {
-    const scrollY = window.scrollY;
-    let current = sections[0];
+function updateBackground() {
+  const scrollY = window.scrollY;
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = maxScroll > 0 ? scrollY / maxScroll : 0;
 
-    for (const section of sections) {
-      if (scrollY >= section.threshold) {
-        current = section;
-      }
+  let current = sections[0];
+
+  for (const section of sections) {
+    if (scrollPercent >= section.threshold) {
+      current = section;
     }
-
-    bgAbout.style.backgroundImage = current.image;
   }
 
+  for (const section of sections) {
+    const el = document.getElementById(section.id);
+    if (el) {
+      el.classList.toggle('active', section.id === current.id);
+    }
+  }
+}
+
 window.addEventListener('scroll', updateBackground);
+window.addEventListener('resize', updateBackground);
 updateBackground();
 
 
