@@ -28,6 +28,7 @@ hr{
 
 /*#region About Page*/
 html{
+  background-color: #0b0b2b;
   scroll-snap-type: y mandatory;
 }
 .snap-section{
@@ -61,7 +62,7 @@ html{
   background-size: cover;
   transition: background-image 0.5s ease, background-color 0.6s ease;
 }
-#snap-orangebg, #snap-naturebg, #snap-underwater{
+#snap-title, #snap-orangebg, #snap-naturebg, #snap-underwater{
   position: fixed;
   background-repeat: no-repeat;
   background-position: center;
@@ -73,6 +74,10 @@ html{
   opacity: 0;
   scale: 1;
   transition: 0.5s ease;
+}
+#snap-title{
+  background-image: url(images/portals.jpg);
+  z-index: -1;
 }
 #snap-orangebg{
   background-image: url(images/portalsorange.jpg);
@@ -86,20 +91,22 @@ html{
   background-image: url(images/underwater.jpg);
   z-index: -1;
 }
+#snap-title.active{
+  z-index: 0;
+  opacity: 1;
+  scale: 1.2;
+}
 #snap-orangebg.active{
-  background-image: url(images/portalsorange.jpg);
   z-index: 0;
   opacity: 1;
   scale: 1.2;
 }
 #snap-naturebg.active{
-  background-image: url(images/portalsnature.jpg);
   z-index: 0;
   opacity: 1;
   scale: 1.2;
 }
 #snap-underwater.active{
-  background-image: url(images/underwater.jpg);
   z-index: 0;
   opacity: 1;
   scale: 1.2;
@@ -321,7 +328,6 @@ header{
 /* #region Pages */
 #portfolio{
   view-transition-name: page-content;
-  background-image: url(images/portals.jpg);
   padding: 20px;
   background-repeat: no-repeat;
   background-position: center;
@@ -831,25 +837,121 @@ td{
 /* #endregion */
 
 /*#region Portfolio Section*/
+#portfolio-title-bg{
+  position: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(images/ship.jpg);
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+#portfolio-title-bg, #portfolio-nea-bg, #portfolio-epq-bg, #portfolio-website-bg, #portfolio-other-bg{
+  position: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: -8px;
+  background-image: url(images/ship.jpg);
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  scale: 1;
+  transition: 0.5s ease;
+}
+#portfolio-title-bg{
+  background-image: url(images/ship.jpg);
+  z-index: -1;
+}
+#portfolio-nea-bg{
+  background-image: url(images/chessgame.png);
+  z-index: -1;
+  filter: blur(10px);
+}
+#portfolio-epq-bg{
+  background-image: url(images/portals.jpg);
+  z-index: -1;
+}
+#portfolio-website-bg{
+  background-image: url(images/websitecode.png);
+  z-index: -1;
+  filter: blur(10px);
+}
+#portfolio-other-bg{
+  background-image: url(images/waterfall.jpg);
+  z-index: -1;
+}
+#portfolio-title-bg.active{
+  z-index: 0;
+  opacity: 1;
+  scale: 1.2;
+}
+#portfolio-nea-bg.active{
+  z-index: 0;
+  opacity: 1;
+  scale: 1.2;
+}
+#portfolio-epq-bg.active{
+  z-index: 0;
+  opacity: 1;
+  scale: 1.2;
+}
+#portfolio-website-bg.active{
+  z-index: 0;
+  opacity: 1;
+  scale: 1.2;
+}
+#portfolio-other-bg.active{
+  z-index: 0;
+  opacity: 1;
+  scale: 1.2;
+}
+
+#snap-title.active{
+  z-index: 0;
+  opacity: 1;
+  scale: 1.2;
+}
+#snap-orangebg.active{
+  z-index: 0;
+  opacity: 1;
+  scale: 1.2;
+}
+#snap-naturebg.active{
+  z-index: 0;
+  opacity: 1;
+  scale: 1.2;
+}
+#snap-underwater.active{
+  z-index: 0;
+  opacity: 1;
+  scale: 1.2;
+}
 .section-title{
   position: relative;
-  align-self: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 55dvh;
+  padding: 20px;
+  padding-bottom: 20px;
 }
-.section-title div{
+.section-title-text{
   position: relative;
   width: 40%;
   font-size: 1em;
-  background: #272727;
+  background: linear-gradient(to left, #56CCF2, #3456D3, #56CCF2);
   border-radius: 50px;
   margin-bottom: 20px;
   padding: 10px;
   padding-left: 20px;
   text-align: center;
-
+  z-index: 1;
 }
-.section-title div::before{
+.section-title-text::before{
   content: '';
   position: absolute;
   top: 0;
@@ -859,42 +961,61 @@ td{
   background: linear-gradient(to left, #56CCF2, #3456D3, #56CCF2);
   border-radius: 50px;
   filter: blur(5px);
-  z-index: -1; 
+  z-index: -1;
 }
 .section-title h1{
   margin: 0;
 }
-#portfolio-button{
-  width: 33%;
+.home-portfolio-title{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 20px;
 }
-#portfolio-button .icon{
-  top: 20px;
+#section-title-scroll-text{
+  position: relative;
+  width: 40%;
+  font-size: 1em;
+  border-radius: 50px;
+  text-align: center;
 }
-.portfolio-card{
+.portfolio-card, .portfolio-stack-card{
   display: flex;
   flex-direction: row;
-  background: #272727;
-  height: 500px;
+  justify-content: space-between;
+  height: 75%;
   width: 75%;
-  border-radius: 15px;
+  max-width: 1200px;
   margin: 10px;
-  box-shadow: 0 0 10px #3456D3;
   margin: 40px;
+  margin-top: 110px;
+}
+.portfolio-card, .portfolio-stack-card div{
+  background: #272727;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #3456D3;
+}
+.portfolio-stack-card div{
+  padding: 20px;
 }
 .portfolio-text{
   flex: 1;
   display: flex;
   flex-direction: column;
   margin: 20px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   
 }
 .portfolio-photo{
   margin: 0;
   border-radius: 15px;
-  width: 30%;
+  width: 40%;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .portfolio-card > a{
   margin-top: auto;
@@ -913,9 +1034,33 @@ td{
 .button1 .icon{
   top: 50%;
 }
+.snap-section .portfolio-card, .snap-section .portfolio-stack-card{
+  opacity: 0;
+  transform: scale(0.7);
+  transition: .5s ease;
+}
+.snap-section.is-visible .portfolio-card, .snap-section.is-visible .portfolio-stack-card{
+  opacity: 1;
+  transform: scale(1);
+}
+
 /*#endregion*/
 
 /* #region Contact form */
+.contact-title{
+  width: 40%;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #272727;
+  border-radius: 50px;
+  box-shadow: 0 0 10px #56CCF2;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.contact-title div h1{
+  margin: 10px;
+}
 #form-title{
   width: 100%;
 }
@@ -962,6 +1107,7 @@ td{
 }
 #form-info > h2{
   font-size: 1.6em;
+  margin: 0;
 }
 #form-info > div{
   height: 100%;

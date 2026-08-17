@@ -17,39 +17,80 @@ if (cvDownloadButton) {
   });
 }
 
-// Snapping
-const sections = [
-  { threshold: 0,    id: 'snap-orangebg' },
-  { threshold: 0.4,  id: 'snap-naturebg' },   // 40% down the page
-  { threshold: 0.7,  id: 'snap-underwater' }, // 70% down the page
-];
+// About BG snapping
 
-function updateBackground() {
-  const scrollY = window.scrollY;
-  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPercent = maxScroll > 0 ? scrollY / maxScroll : 0;
+const path = window.location.pathname; 
 
-  let current = sections[0];
+const currentPage = path.split('/').pop(); 
 
-  for (const section of sections) {
-    if (scrollPercent >= section.threshold) {
-      current = section;
+if (currentPage == 'about.html'){
+  const sections = [
+    { threshold: 0,    id: 'snap-title' },
+    { threshold: 0.3,  id: 'snap-orangebg' },
+    { threshold: 0.6,  id: 'snap-naturebg' },
+    { threshold: 0.9,  id: 'snap-underwater' },
+  ];
+  
+  function updateBackground() {
+    const scrollY = window.scrollY;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = maxScroll > 0 ? scrollY / maxScroll : 0;
+  
+    let current = sections[0];
+  
+    for (const section of sections) {
+      if (scrollPercent >= section.threshold) {
+        current = section;
+      }
+    }
+  
+    for (const section of sections) {
+      const el = document.getElementById(section.id);
+      if (el) {
+        el.classList.toggle('active', section.id === current.id);
+      }
     }
   }
-
-  for (const section of sections) {
-    const el = document.getElementById(section.id);
-    if (el) {
-      el.classList.toggle('active', section.id === current.id);
+} else if (currentPage == 'portfolio.html') {
+  const sections = [
+    { threshold: 0,    id: 'portfolio-title-bg' },
+    { threshold: 0.25,  id: 'portfolio-nea-bg' },
+    { threshold: 0.5,  id: 'portfolio-epq-bg' },
+    { threshold: 0.75,  id: 'portfolio-website-bg' },
+    { threshold: 0.8,  id: 'portfolio-other-bg' },
+  ];
+  
+  function updateBackground() {
+    const scrollY = window.scrollY;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = maxScroll > 0 ? scrollY / maxScroll : 0;
+  
+    let current = sections[0];
+  
+    for (const section of sections) {
+      if (scrollPercent >= section.threshold) {
+        current = section;
+      }
+    }
+  
+    for (const section of sections) {
+      const el = document.getElementById(section.id);
+      if (el) {
+        el.classList.toggle('active', section.id === current.id);
+      }
     }
   }
 }
+
 
 window.addEventListener('scroll', updateBackground);
 window.addEventListener('resize', updateBackground);
 updateBackground();
 
 
+
+
+//General Snapping Logic
 const snapSections = document.querySelectorAll('.snap-section');
 
 const observer = new IntersectionObserver(
