@@ -165,14 +165,14 @@ html{
   transition: 0.5s ease-in-out;
   isolation: isolate;
 }
-.button1 > span:first-child {
+.button1 > span:first-child{
   position: absolute;
   left: 18px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
 }
-.button1 .icon {
+.button1 .icon{
   position: absolute;
   right: 18px;
   bottom: 0px;
@@ -180,9 +180,18 @@ html{
   display: grid;
   place-items: center;
   z-index: 1;
+  align-self: center;
 }
 .button1 ion-icon{
   margin-left: auto;
+  transition: 0.5s ease;
+  position: absolute;
+  margin-right: 20px;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  align-self: center;
 }
 .button1::before{
   content: '';
