@@ -9,6 +9,10 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div id="page-loader">
+      <div class="spinner"></div>
+    </div>
+
     <header style="position: sticky; top: 0; z-index: 100;">
 
         <h1 class="header-text">Welcome!</h1>
@@ -100,7 +104,7 @@
                 </td>
 
                 <!-- Photo card -->
-                <td rowspan="3" height="700">
+                <td rowspan="3" height="700" id="photo-card-td">
                     <div id="photo-card" style="background-image: url(images/homephoto.png);"></div>
                 </td>
             </tr>

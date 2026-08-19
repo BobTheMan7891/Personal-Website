@@ -3,28 +3,62 @@
   color: white;
   font-family: Arial, Verdana, Helvetica;
 }
+html, body{
+  max-width: 100%;
+}
 body{
   margin: 0;
   padding: 0;
 }
+h1, h2, h3, h4, h5, h6, p, li, span, a, div{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+img{
+  max-width: 100%;
+}
 main{
   padding: 8px;
-  view-transition-name: page-content;
   background: #0b0b2b;
 }
 hr{
   width: 100%;
 }
-#preloader {
+
+/*#region Preloader */
+#page-loader{
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: #0b0b2b;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0b0b2b;
+  z-index: 9999;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  transition: opacity 0.4s ease, visibility 0.4s;
+  opacity: 1;
+  visibility: visible;
 }
+.spinner{
+  width: 50px;
+  height: 50px;
+  border: 5px solid #3456D3;
+  border-top: 5px solid #56CCF2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+#page-loader.hidden{
+  opacity: 0;
+  visibility: hidden;
+}
+/*#endregion*/
 
 /*#region About Page*/
 html{
@@ -68,9 +102,10 @@ html{
   background-position: center;
   background-size: cover;
   margin: -8px;
+  top: -50px;
   background-image: url(images/portals.jpg);
-  height: 100%;
-  width: 100%;
+  height: 120%;
+  width: 120%;
   opacity: 0;
   scale: 1;
   transition: 0.5s ease;
@@ -232,16 +267,20 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
   height: 70px;
   border-bottom: 2px solid #3456D3;
   padding: 18px;
   position: sticky;
   top: 0;
   z-index: 100;
+  flex-wrap: nowrap;
 }
 .header-text{
   display: inline;
   text-shadow: 0 0 5px #fff;
+  white-space: nowrap;
+  margin: 0;
 }
 
 /* #region Hamburger Menu */
@@ -266,8 +305,7 @@ header{
   right: 0;
 }
 .ham-menu{
-  height: 0px;
-  width: 0px;
+  display: none;
   margin-left: auto;
   position: relative;
   z-index: 101;
@@ -336,7 +374,6 @@ header{
 
 /* #region Pages */
 #portfolio{
-  view-transition-name: page-content;
   padding: 20px;
   background-repeat: no-repeat;
   background-position: center;
@@ -381,7 +418,6 @@ li{
   color: rgb(180, 180, 180);
 }
 /* #endregion */
-
 
 /* #region Tables */
 table{
@@ -773,6 +809,7 @@ td{
   display: flex;
   gap: 25px;
   margin-left: auto;
+  margin-right: -15px;
 }
 #nav-menu li{
   position: relative;
@@ -1099,7 +1136,7 @@ td{
 }
 .form-card #contact-card{
   border-radius: 50px;
-  width: 40%;
+  width: 30%;
   padding-left: 40px;
   padding-right: 40px;
   box-shadow: 0 0 10px #56CCF2;
@@ -1212,32 +1249,218 @@ label{
 }
 /* #endregion */
 
-/* #region Smaller Screen */
-@media screen and (max-width:600px){
-  .ham-menu{
+/* #region Responsive layout */
+
+/* ---- Tablet / medium screens ---- */
+@media screen and (max-width: 1024px){
+  html, body{
+    overflow-x: hidden;
+  }
+  html{
+    scroll-snap-type: none;
+  }
+  .snap-section{
+    height: auto;
+    padding: 90px 0 30px;
+  }
+  .snap-card, .snap-cards-2{
+    width: 88%;
+    opacity: 1;
     transform: scale(1);
+  }
+  .portfolio-card, .portfolio-stack-card{
+    width: 88%;
+  }
+  .portfolio-stack-card{
+    width: 88%;
+  }
+  .section-title-text, #section-title-scroll-text{
+    width: 60%;
+  }
+  .contact-title{
+    width: 60%;
+  }
+  #form-info, .form-card > div:not(#contact-card){
+    width: 88%;
+  }
+}
+
+/* ---- Stack home overview table into 1 column ---- */
+@media screen and (max-width: 900px){
+  table#overview-cards-desktop{
+    height: auto;
+    max-height: none;
+  }
+  table#overview-cards-desktop, table#overview-cards-desktop tbody, table#overview-cards-desktop tr, table#overview-cards-desktop td{
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+  }
+  table#overview-cards-desktop td{
+    padding: 5px;
+  }
+  table#overview-cards-desktop #photo-card-td{
+    padding: 0;
+  }
+  #profile-card, #about-card, #cv-card, #skills-card, #contact-card{
+    margin-bottom: 5px;
+    box-shadow: 0 0 10px #56CCF2;
+  }
+  #profile-card{
+    height: 320px;
+  }
+  #photo-card{
+    display: none;
+  }
+  #about-card, #cv-card, #skills-card, #contact-card{
+    height: auto;
+    min-height: 120px;
+  }
+  #skills-card, #cv-card, #about-card{
+    min-height: 200px;
+  }
+  #contact-card{
+    min-height: 90px;
+  }
+}
+
+/* ---- Mobile / small screens ---- */
+@media screen and (max-width: 768px){
+  header{
+    justify-content: space-between;
+  }
+  .ham-menu{
+    display: flex;
     margin-left: auto;
     margin-right: 10px;
     height: 40px;
     width: 40px;
+    flex-shrink: 0;
   }
   #nav-menu{
-    transform: scale(0);
+    display: none;
+  }
+
+  /* About page snap cards: stack and let content size the card */
+  .snap-section{
+    height: auto;
+    padding: 90px 0 30px;
+  }
+  .snap-card, .snap-cards-2{
+    width: 90% !important;
+    height: auto;
+    max-height: none;
+  }
+  .snap-cards-2{
+    flex-direction: column;
+    gap: 20px;
+  }
+  #education-card, #courses-card, #hobbies-card, #skills-card, #contact-card{
+    height: auto;
+    width: 100% !important;
+  }
+  .section-title-text, #section-title-scroll-text{
+    width: 90%;
+  }
+  .portfolio-card, .portfolio-stack-card{
+    flex-direction: column;
+    width: 90% !important;
+    height: auto;
+    margin: 90px auto 30px;
+    padding: 20px;
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+
+  /* Portfolio cards */
+  .portfolio-card, .portfolio-stack-card{
+    flex-direction: column;
+    width: 90% !important;
+    height: auto;
+    margin: 90px auto 30px;
+    padding: 20px;
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+  .portfolio-photo{
+    display: none;
+  }
+  .portfolio-text{
+    margin: 10px 0;
+  }
+  #portfolio .home-portfolio-title{
+    padding-top: 10px;
+  }
+  #portfolio .portfolio-stack-card{
+    margin-top: 30px;
+  }
+
+  /* Contact page form: stack info card above form, full width */
+  .contact-title{
+    width: 90%;
+  }
+  .form-card > div:not(#contact-card){
+    flex-direction: column;
+    width: 92%;
+  }
+  #form-info{
+    width: 100%;
+  }
+  #form-info > div{
+    padding: 15px 0;
+  }
+  .form-card #contact-card{
+    width:90% !important;
   }
   .name-email-form{
     display: block;
   }
+  .form-text, textarea, .form-buttons{
+    max-width: 100%;
+  }
+  #contact-main{
+    height: auto;
+    min-height: calc(100dvh - 70px);
+    padding: 20px 0;
+  }
+  #contact-div{
+    height: auto;
+    justify-content: flex-start;
+  }
+}
+
+/* ---- Mobile / small screens ---- */
+@media screen and (max-width: 480px){
+  main{
+    padding: 6px;
+  }
+  #profile-h1{
+    font-size: 1.5em;
+  }
+  #job-title{
+    font-size: 1em;
+  }
+  #profile-card{
+    height: 300px;
+  }
+  #photo-card{
+    height: 200px;
+  }
+  .snap-card, .snap-cards-2, .portfolio-card, .portfolio-stack-card{
+    width: 94%;
+  }
+  .section-title-text, #section-title-scroll-text{
+    width: 94%;
+  }
+  .contact-title, .form-card > div:not(#contact-card), .form-card #contact-card{
+    width: 94%;
+  }
+  .skills-pill{
+    font-size: 0.85em;
+    padding: 8px 12px;
+  }
+  .button1{
+    font-size: 1.1em;
+  }
 }
 /* #endregion */
-
-@media(prefers-reduced-motion: no-preference){
-  @view-transition{
-    navigation: auto;
-  }
-  
-  ::view-transition-group(page-content){
-    animation-duration: 1s;
-    animation-timing-function: ease;
-  }
-}
-

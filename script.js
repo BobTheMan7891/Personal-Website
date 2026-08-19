@@ -17,8 +17,7 @@ if (cvDownloadButton) {
   });
 }
 
-// About BG snapping
-
+// Change background on each snapping section
 const path = window.location.pathname; 
 
 const currentPage = path.split('/').pop(); 
@@ -83,14 +82,13 @@ if (currentPage == 'about.html'){
 }
 
 
-window.addEventListener('scroll', updateBackground);
-window.addEventListener('resize', updateBackground);
-updateBackground();
+if (typeof updateBackground === 'function') {
+  window.addEventListener('scroll', updateBackground);
+  window.addEventListener('resize', updateBackground);
+  updateBackground();
+}
 
-
-
-
-//General Snapping Logic
+// Only show snap section when visible
 const snapSections = document.querySelectorAll('.snap-section');
 
 const observer = new IntersectionObserver(
@@ -107,25 +105,49 @@ const observer = new IntersectionObserver(
 snapSections.forEach((section) => observer.observe(section));
 
 // Preloading
-window.addEventListener('load', () => {
-  const preloader = document.getElementById('preloader');
-  preloader.style.display = 'none'; // Hide when everything is loaded
-});
-
-// Array of all image URLs on your page
-const imagesToCache = [
-  'images/portalsnature.jpg',
-  'images/portalsorange.jpg',
-  'images/underwater.jpg',
-];
-
-// Execution function
-function bulkPreloadImages(urls) {
-  urls.forEach(url => {
-    const img = new Image();
-    img.src = url;
-  });
+function hideLoader() {
+  const loader = document.getElementById('page-loader');
+  if (loader) {
+    loader.classList.add('hidden');
+  }
 }
 
-// Run immediately when script parses
-bulkPreloadImages(imagesToCache);
+// FIX: If the page is already loaded by the time this script runs, hide it immediately
+if (document.readyState === 'complete') {
+  hideLoader();
+} else {
+  // Otherwise, wait for the load event safely
+  window.addEventListener('load', hideLoader);
+}
+
+// Intercept link clicks to show the loader before leaving the page
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a');
+
+  if (
+    link && 
+    link.href && 
+    !link.hash && 
+    link.target !== '_blank' && 
+    link.hostname === window.location.hostname
+  ) {
+    e.preventDefault(); 
+    const targetUrl = link.href;
+    const loader = document.getElementById('page-loader');
+
+    if (loader) {
+      loader.classList.remove('hidden');
+    }
+
+    setTimeout(() => {
+      window.location.href = targetUrl;
+    }, 400); 
+  }
+});
+
+// Fix for browser "Back/Forward" cache
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted) {
+    hideLoader();
+  }
+});
