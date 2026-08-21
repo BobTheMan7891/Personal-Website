@@ -53,11 +53,27 @@
 
         <!-- Ham menu and off screen menu -->
         <div class="off-screen-menu">
-            <ul>
-                <a href="index.html"><li>Home</li></a>
-                <a href="about.html"><li>About</li></a>
-                <a href="portfolio.html"><li>Portfolio</li></a>
-                <a href="contact.html"><li>Contact</li></a>
+            <ul style="position: relative; top: 50px; right: 20px;">
+                <a href="index.html" class="button2">
+                    <button>
+                        <span>Home</span>
+                    </button>
+                </a>
+                <a href="about.html" class="button2">
+                    <button>
+                        <span>About</span>
+                    </button>
+                </a>
+                <a href="portfolio.html" class="button2">
+                    <button>
+                        <span>Portfolio</span>
+                    </button>
+                </a>
+                <a href="contact.html" class="button2">
+                    <button>
+                        <span>Contact</span>
+                    </button>
+                </a>
             </ul>
         </div>
 
@@ -81,7 +97,7 @@
 
         <section class="snap-section">
             <div style="display: flex; flex-direction: column; width: 100%; height: 100%; justify-content:end;">
-                <div class="section-title">
+                <div class="section-title snap-card" style="background-color: transparent; box-shadow: none;">
                     <div class="section-title-text">
                         <h1>About</h1>
                     </div>
@@ -112,9 +128,10 @@
                         Outside of academics and coding, I enjoy gaming, playing football, going to the gym, and listening to music. THese interests keep me balanced and often provide inspiration for the projects I like to build.
                     </p>
                 </div>
+                <br>
                 <a href="portfolio.html" style="margin-top: auto;">
                     <button id="about-button" class="button1">
-                        <span>Portfolio...</span>
+                        <span>Portfolio</span>
                         <span class="icon"><ion-icon name="ellipsis-horizontal"></ion-icon></span>
                     </button>
                 </a>
@@ -173,7 +190,7 @@
         </section>
 
         <section class="snap-section">
-            <div id="other-snap-card" class="snap-cards-2">
+            <div id="other-snap-card" class="snap-cards-2" style="height: 50%;">
                 <div class="snap-card list-card" id="hobbies-card" style="width: 50%;">
                     <h1 id="about-h1">Hobbies</h1>
                     <hr id="about-hr">
@@ -206,7 +223,7 @@
                     </div>
                 </div>
                 <div id="skills-contact-card" style="display: flex;flex-direction: column; gap: 20px;">
-                    <div id="skills-card" class="blue-card snap-card">
+                    <div id="skills-card" class="blue-card snap-card skills-snap-card">
                         <h1 id="skills-h1">Skills</h1>
                         <hr>
                         <div id="skills-list">
@@ -221,7 +238,7 @@
                             <div class="skills-pill">Problem Solving</div>
                         </div>
                     </div>
-                    <div id="contact-card" class="blue-card snap-card" style="height: 80px;">
+                    <div id="contact-card" class="blue-card snap-card contact-snap-card" style="height: 80px;">
                         <ul class="contact-list">
                             <li>
                                 <a href="https://wa.me/+971568157979" target="_blank">

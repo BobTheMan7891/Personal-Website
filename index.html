@@ -50,11 +50,27 @@
 
         <!-- Ham menu and off screen menu -->
         <div class="off-screen-menu">
-            <ul>
-                <a href="index.html"><li>Home</li></a>
-                <a href="about.html"><li>About</li></a>
-                <a href="portfolio.html"><li>Portfolio</li></a>
-                <a href="contact.html"><li>Contact</li></a>
+            <ul style="position: relative; top: 50px; right: 20px;">
+                <a href="index.html" class="button2">
+                    <button>
+                        <span>Home</span>
+                    </button>
+                </a>
+                <a href="about.html" class="button2">
+                    <button>
+                        <span>About</span>
+                    </button>
+                </a>
+                <a href="portfolio.html" class="button2">
+                    <button>
+                        <span>Portfolio</span>
+                    </button>
+                </a>
+                <a href="contact.html" class="button2">
+                    <button>
+                        <span>Contact</span>
+                    </button>
+                </a>
             </ul>
         </div>
 
@@ -81,7 +97,7 @@
                         <img src="images/favicon.jpg" alt="portrait" id="profile-portrait">
                         <div id="profile-text">
                             <h1 id="profile-h1">Oscar Sutherland</h1>
-                            <h1 id="job-title">Part-time jobs, internships & work experience</h1>
+                            <!-- <h1 id="job-title">Part-time jobs, internships & work experience</h1> -->
                         </div>
                     </div>
                 </td>
@@ -94,9 +110,10 @@
                         <p id="about-p">
                             I graduated from Nord Anglia International School Dubai in the 2025/26 academic year, where I completed three A-Levels in Computer Science, Business, and Physics, as well as an EPQ. This reflects my passion for technology and business. I have a strong entrepreneurial mindset, which has led me to seek a role where I can contribute meaningfully while gaining real-world experience.
                         </p>
+                        <br>
                         <a href="about.html">
                             <button id="about-button" class="button1">
-                                <span>More...</span>
+                                <span>More</span>
                                 <span class="icon"><ion-icon name="ellipsis-horizontal"></ion-icon></span>
                             </button>
                         </a>
@@ -114,6 +131,7 @@
                     <div id="cv-card" class="grey-card">
                         <h1 id="cv-h1">CV</h1>
                         <hr id="cv-hr">
+                        <p id="about-p" style="margin-top: 20px;">Interested in part-time jobs, internships & work experience.</p>
                         <a href="Downloads/Oscar S CV.pdf" download>
                             <button id="cv-download" class="button1">
                                 <span>Download</span>
@@ -212,8 +230,8 @@
 
     </main>
 
-    <section id="portfolio" style="background-image: url(images/portals.jpg);">
-        <div class="home-portfolio-title" style="margin-top: 10px;">
+    <section id="portfolio" style="background-image: url(images/portals.jpg); align-content: center; align-items: center; display: flex; flex-direction: column;">
+        <div class="home-portfolio-title">
             <div class="section-title-text" style="padding: 10px;">
                 <h1 style="margin: 0;">Portfolio</h1>
             </div>
@@ -230,7 +248,7 @@
                     <br>
                     <a href="portfolio.html#nea-section" style="margin-top: auto;">
                         <button id="nea-button" class="button1">
-                            <span id="button1-text">Read More...</span>
+                            <span id="button1-text">Read More</span>
                             <span class="icon"><ion-icon name="ellipsis-horizontal"></ion-icon></span>
                         </button>
                     </a>
@@ -244,7 +262,7 @@
                     <br>
                     <a href="portfolio.html#epq-section" style="margin-top: auto;">
                         <button id="epq-button" class="button1">
-                            <span>Read More...</span>
+                            <span>Read More</span>
                             <span class="icon"><ion-icon name="ellipsis-horizontal"></ion-icon></span>
                         </button>
                     </a>
@@ -258,7 +276,7 @@
                     <br>
                     <a href="portfolio.html#website-section" style="margin-top: auto;">
                         <button id="course-button" class="button1">
-                            <span>Read More...</span>
+                            <span>Read More</span>
                             <span class="icon"><ion-icon name="ellipsis-horizontal"></ion-icon></span>
                         </button>
                     </a>
