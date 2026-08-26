@@ -17,6 +17,33 @@ if (cvDownloadButton) {
   });
 }
 
+// Contact card buttons anim
+document.querySelectorAll('.contact-list li').forEach((contactItem) => {
+  let timeoutDone = false;
+  let mouseLeft = false;
+
+  contactItem.addEventListener('mouseenter', () => {
+    // Reset state for this hover cycle
+    timeoutDone = false;
+    mouseLeft = false;
+    contactItem.classList.add('active');
+
+    setTimeout(() => {
+      timeoutDone = true;
+      if (mouseLeft) {
+        contactItem.classList.remove('active');
+      }
+    }, 1200);
+  });
+
+  contactItem.addEventListener('mouseleave', () => {
+    mouseLeft = true;
+    if (timeoutDone) {
+      contactItem.classList.remove('active');
+    }
+  });
+});
+
 // Change background on each snapping section
 const path = window.location.pathname; 
 
@@ -89,12 +116,16 @@ if (typeof updateBackground === 'function') {
 }
 
 // Only show snap section when visible
-const snapSections = document.querySelectorAll('.snap-section');
+// Animate snap cards when visible
+const snapSections = [...document.querySelectorAll('.snap-section')];
 
-const observer = new IntersectionObserver(
+const animationObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      entry.target.classList.toggle('is-visible', entry.isIntersecting);
+      entry.target.classList.toggle(
+        'is-visible',
+        entry.isIntersecting
+      );
     });
   },
   {
@@ -102,7 +133,51 @@ const observer = new IntersectionObserver(
   }
 );
 
-snapSections.forEach((section) => observer.observe(section));
+snapSections.forEach((section) => {
+  animationObserver.observe(section);
+});
+
+// Highlight the current nav section's corresponding item
+const navItems = [...document.querySelectorAll('.snap-card-nav-item')];
+const visibleSections = new Map();
+
+function updateActiveNavItem() {
+  const currentSection = snapSections.reduce((mostVisible, section) => {
+    const currentRatio = visibleSections.get(section) || 0;
+    const mostVisibleRatio = mostVisible
+      ? visibleSections.get(mostVisible) || 0
+      : 0;
+
+    return currentRatio > mostVisibleRatio
+      ? section
+      : mostVisible;
+  }, null);
+
+  navItems.forEach((item, index) => {
+    item.classList.toggle(
+      'active',
+      snapSections[index] === currentSection
+    );
+  });
+}
+
+const navigationObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      visibleSections.set(entry.target, entry.intersectionRatio);
+    });
+
+    updateActiveNavItem();
+  },
+  {
+    threshold: [0, 0.25, 0.5, 0.75, 1],
+  }
+);
+
+snapSections.forEach((section) => {
+  visibleSections.set(section, 0);
+  navigationObserver.observe(section);
+});
 
 // Preloading
 function hideLoader() {
@@ -112,15 +187,12 @@ function hideLoader() {
   }
 }
 
-// FIX: If the page is already loaded by the time this script runs, hide it immediately
 if (document.readyState === 'complete') {
   hideLoader();
 } else {
-  // Otherwise, wait for the load event safely
   window.addEventListener('load', hideLoader);
 }
 
-// Intercept link clicks to show the loader before leaving the page
 document.addEventListener('click', (e) => {
   const link = e.target.closest('a');
 
@@ -145,7 +217,6 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Fix for browser "Back/Forward" cache
 window.addEventListener('pageshow', (e) => {
   if (e.persisted) {
     hideLoader();

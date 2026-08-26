@@ -1,7 +1,7 @@
 *{
   box-sizing: border-box;
   color: white;
-  font-family: Arial, Verdana, Helvetica;
+  font-family: Arial, Helvetica, Verdana;
 }
 html, body{
   max-width: 100%;
@@ -25,6 +25,39 @@ main{
 hr{
   width: 100%;
 }
+
+/*#region snap cards nav menu */
+.snap-cards-nav{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  top: 50%;
+  left: 100%;
+  translate: -100% -50%;
+  height: auto;
+  gap: 50px;
+  width: 75px;
+  z-index: 100;
+  padding: 20px;
+}
+.snap-card-nav-item{
+  height: 20px;
+  width: 20px;
+  border-radius: 100px;
+  border: 3px solid white;
+  background-color: transparent;
+  transition: all 0.5s ease;
+}
+.snap-card-nav-item:hover{
+  height: 25px;
+  width: 25px;
+}
+.snap-card-nav-item.active{
+  background-color: white;
+}
+/*#endregion*/
 
 /*#region Preloader */
 #page-loader{
@@ -89,6 +122,9 @@ html{
 }
 #other-snap-card{
   margin-top: 70px;
+}
+#hobbies-card{
+  height: fit-content;
 }
 #about-page main{
   background-repeat: no-repeat;
@@ -333,6 +369,8 @@ header{
   text-shadow: 0 0 5px #fff;
   white-space: nowrap;
   margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /* #region Hamburger Menu */
@@ -554,6 +592,7 @@ td{
   background-image: radial-gradient(rgba(255, 255, 255, 0.55) 1.5px, transparent 1.5px);
   background-size: 22px 22px;
   background-position: 0px 5px;
+  border-radius: 15px;
 }
 #profile-portrait{
   position: relative;
@@ -578,13 +617,18 @@ td{
   position: absolute;
   bottom: 0%;
   margin: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 #profile-h1{
   /* position: relative; */
-  font-size: 2em;
   margin-bottom: 0;
   margin-right: 10px;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 #job-title{
   color: #8e8e8e;
@@ -600,8 +644,11 @@ td{
 }
 #about-h1{
   position: relative;
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin-top: 0px;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 #about-hr{
   margin-top: -5px;
@@ -627,9 +674,12 @@ td{
   padding: 15px;
 }
 #cv-h1{
-  font-size: 1.5em;
+  font-size: 1.2em;
   position: relative;
   margin: 0;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 #cv-hr{
   margin-bottom: -10px;
@@ -732,6 +782,7 @@ td{
   align-items: center;
   height: 100%;
   width: 100%;
+  padding: 10px 8px;
 }
 .contact-list{
   display: flex;
@@ -744,7 +795,7 @@ td{
   padding: 0;
   margin: 0;
   list-style: none;
-  gap: 10px;
+  gap: 20px;
 }
 .contact-list li{
   list-style: none;
@@ -806,19 +857,19 @@ td{
 }
 
 /* Entering hover */
-.contact-list li:hover a .contact-card-icons{
+.contact-list li.active a .contact-card-icons{
   transform: scale(0);
   transition-delay: 0s;
 }
-.contact-list li:hover a .contact-card-icons-hover{
+.contact-list li.active a .contact-card-icons-hover{
   transform: scale(1);
   transition-delay: 0.75s;
 }
-.contact-list li:hover .contact-outer{
+.contact-list li.active .contact-outer{
   transform: translate(-50%, -50%) scale(1);
   transition-delay: 0.25s;
 }
-.contact-list li:hover .contact-inner{
+.contact-list li.active .contact-inner{
   transform: translate(-50%, -50%) scale(1);
   transition-delay: 0.5s;
 }
@@ -833,7 +884,7 @@ td{
   filter: blur(15px);
   opacity: 0;
 }
-.contact-list li:hover a::before{
+.contact-list li.active a::before{
   opacity: 0.5;
 }
 
@@ -844,9 +895,12 @@ td{
   flex-direction: column;
 }
 #skills-h1{
-  font-size: 1.5em;
+  font-size: 1.2em;
   position: relative;
   margin: 0;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 #skills-list{
   flex: 1;
@@ -1048,9 +1102,17 @@ td{
   height: 55dvh;
   padding: 20px;
   padding-bottom: 20px;
+  font-size: 1em;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
 }
 .section-title-text{
   position: relative;
+  font-size: 1em;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
   width: 40%;
   font-size: 1em;
   background: linear-gradient(to left, #56CCF2, #3456D3, #56CCF2);
@@ -1086,7 +1148,12 @@ td{
   padding-bottom: 20px;
   margin-top: 10px;
   width: 100%;
-  max-width: 600px;
+  max-width: none;
+}
+#home-portfolio-title-text{
+  width: 100%;
+  min-width: none;
+  max-width: none;
 }
 #section-title-scroll-text{
   position: relative;
@@ -1135,7 +1202,20 @@ td{
   font-size: 1.2em;
 }
 .portfolio-card h1{
-  font-size: 1.5em;
+  font-size: 1.2em;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.portfolio-card-h1{
+  font-size: 1.2em;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-top: 0;
+  padding-bottom: 10px;
 }
 .portfolio-hr{
   margin-top: -5px;
@@ -1172,6 +1252,10 @@ td{
 }
 .contact-title div h1{
   margin: 10px;
+  font-size: 1.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
 }
 #form-title{
   width: 100%;
@@ -1318,10 +1402,10 @@ label{
 /* #region Responsive layout */
 
 #portfolio .section-title-text {
-  width: 40% !important;
+  width: 40%;
 }
 #portfolio .portfolio-stack-card {
-  width: 100% !important;
+  width: 100%;
   max-width: none;
   margin-left: 0;
   margin-right: 0;
@@ -1372,6 +1456,9 @@ label{
   #education-card, #courses-card{
     min-height: 400px;
   }
+  .snap-cards-nav{
+    display: none;
+  }
 }
 
 /* ---- Stack home overview table into 1 column ---- */
@@ -1397,6 +1484,9 @@ label{
   }
   #profile-card{
     height: 320px;
+  }
+  #profile-text{
+    top: 215px;
   }
   #photo-card{
     display: none;
@@ -1456,7 +1546,6 @@ label{
     flex-direction: column;
     width: 90% !important;
     height: auto;
-    margin: 90px auto 30px;
     padding: 20px;
     padding-top: 0;
     padding-bottom: 10px;
@@ -1476,12 +1565,25 @@ label{
   #portfolio .portfolio-stack-card{
     margin-top: 30px;
   }
+  #courses-card, #education-card{
+    min-height: 0;
+    height: auto;
+  }
+  #hobbies-card div{
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: auto;
+  }
 }
 
 /* ---- Mobile / small screens ---- */
 @media screen and (max-width: 768px){
   header{
     justify-content: space-between;
+  }
+  #portfolio .section-title-text {
+    width: 50%;
   }
   .ham-menu{
     display: flex;
@@ -1514,7 +1616,7 @@ label{
     width: 100% !important;
   }
   .section-title-text, #section-title-scroll-text{
-    width: 90%;
+    width: 60%;
   }
   .portfolio-card, .portfolio-stack-card{
     flex-direction: column;
@@ -1551,6 +1653,12 @@ label{
   }
 }
 
+@media screen and (max-width: 560px){
+  #portfolio .section-title-text {
+    width: 60%;
+  }
+}
+
 /* ---- Mobile / small screens ---- */
 @media screen and (max-width: 480px){
   main{
@@ -1559,20 +1667,19 @@ label{
   #profile-h1{
     font-size: 1.5em;
   }
-  #job-title{
-    font-size: 1em;
-  }
-  #profile-card{
-    height: 300px;
-  }
   #photo-card{
     height: 200px;
+  }
+  #portfolio .section-title-text {
+    width: 100%;
   }
   .snap-card, .snap-cards-2, .portfolio-card, .portfolio-stack-card{
     width: 94%;
   }
-  .section-title-text, #section-title-scroll-text{
-    width: 94%;
+  .section-title, .section-title-text, #section-title-scroll-text{
+    min-width: 0;
+    width: 100%;
+    padding: 10px 0;
   }
   .contact-title, .form-card > div:not(#contact-card), .form-card #contact-card{
     width: 94%;
@@ -1596,6 +1703,19 @@ label{
     justify-content: center;
     align-items: center;
     gap: 10px !important;
+  }
+  .section-title-text{
+    width: 100%;
+    max-width: none;
+  }
+  .home-portfolio-title{
+    width: 100%;
+    max-width: none;
+  }
+  @media screen and (max-width: 388px){
+    #profile-card{
+      height: 340px;
+    }
   }
 }
 /* #endregion */
