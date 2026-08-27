@@ -1459,6 +1459,21 @@ label{
   .snap-cards-nav{
     display: none;
   }
+  #portfolio-title-bg, #portfolio-nea-bg, #portfolio-epq-bg, #portfolio-website-bg, #portfolio-other-bg{
+    opacity: 1;
+    scale: 1;
+  }
+  #portfolio-title-bg, #portfolio-nea-bg, #portfolio-epq-bg, #portfolio-website-bg, #portfolio-other-bg{
+    position: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: -8px;
+    background-image: url(images/chessgame.png);
+    filter: blur(10px);
+    height: 100%;
+    width: 100%;
+  }
 }
 
 /* ---- Stack home overview table into 1 column ---- */
@@ -1525,7 +1540,7 @@ label{
   }
   .snap-section{
     height: auto;
-    padding: 90px 0 30px;
+    padding: 20px;
   }
   .snap-card, .snap-cards-2{
     width: 90% !important;
@@ -1544,7 +1559,7 @@ label{
   /* Portfolio cards */
   .portfolio-card, .portfolio-stack-card{
     flex-direction: column;
-    width: 90% !important;
+    width: 100% !important;
     height: auto;
     padding: 20px;
     padding-top: 0;
@@ -1575,6 +1590,11 @@ label{
     gap: 20px;
     height: auto;
   }
+  .snap-section .portfolio-card, .snap-section .portfolio-stack-card{
+    opacity: 1;
+    transform: scale(1);
+    transition: .5s ease;
+  }
 }
 
 /* ---- Mobile / small screens ---- */
@@ -1600,10 +1620,10 @@ label{
   /* About page snap cards: stack and let content size the card */
   .snap-section{
     height: auto;
-    padding: 90px 0 30px;
+    padding: 20px;
   }
   .snap-card, .snap-cards-2{
-    width: 90% !important;
+    width: 100% !important;
     height: auto;
     max-height: none;
   }
@@ -1620,7 +1640,7 @@ label{
   }
   .portfolio-card, .portfolio-stack-card{
     flex-direction: column;
-    width: 90% !important;
+    width: 100% !important;
     height: auto;
     margin: 90px auto 30px;
     padding: 20px;
