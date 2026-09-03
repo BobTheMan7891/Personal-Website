@@ -222,3 +222,13 @@ window.addEventListener('pageshow', (e) => {
     hideLoader();
   }
 });
+
+// Contact form subject dropdown menu
+const subjectSelect = document.querySelector("#subject");
+
+subjectSelect.addEventListener("change", () => {
+  subjectSelect.classList.toggle(
+    "has-value",
+    subjectSelect.value !== ""
+  );
+});

@@ -777,12 +777,16 @@ td{
 /* Contact Card */
 #contact-card{
   display: flex;
+  gap: 12px;
   position: relative;
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 100%;
-  padding: 10px 8px;
+  /* width: 100%;
+  padding: 10px 8px; */
+  height: auto;
+  padding: 12px 8px;
+  margin: 0;
 }
 .contact-list{
   display: flex;
@@ -1001,6 +1005,12 @@ td{
 /* #endregion */
 
 /*#region Portfolio Section*/
+#portfolio .section-title-text {
+  width: fit-content;
+  min-width: 300px;
+  max-width: 100%;
+  white-space: nowrap;
+}
 #portfolio-title-bg{
   position: fixed;
   background-repeat: no-repeat;
@@ -1239,163 +1249,175 @@ td{
 /*#endregion*/
 
 /* #region Contact form */
-.contact-title{
-  width: 40%;
-  padding-left: 20px;
-  padding-right: 20px;
-  background: #272727;
-  border-radius: 50px;
-  box-shadow: 0 0 10px #56CCF2;
-  align-content: center;
+#contact-background{
+  width: 100%;
+  height: fit-content;
+  background-image: url(images/waterfall.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   justify-content: center;
-  margin-bottom: 20px;
+  align-items: center;
 }
-.contact-title div h1{
-  margin: 10px;
-  font-size: 1.8em;
+#contact-title{
+  position: relative;
+  background: linear-gradient(to left, #56CCF2, #3456D3, #56CCF2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border-radius: 360px;
+  width: 40%;
+  min-width: fit-content;
+  height: 60px;
+  z-index: 1;
+}
+#contact-title::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to left, #56CCF2, #3456D3, #56CCF2);
+  border-radius: 50px;
+  filter: blur(5px);
+  z-index: -1;
+}
+#contact-title h1{
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+  z-index: 1;
+}
+#contact-box{
+  height: fit-content;
+  width: 60%;
+  background-color: #272727;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #3456D3;
+  display: flex;
+  align-items: stretch;
+}
+#contact-information{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 40%;
+  padding: 20px;
+  min-width: fit-content;
+  background: #3456D3;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+}
+#contact-information h2{
+  font-size: 1em;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.3em;
 }
-#form-title{
-  width: 100%;
-}
-#form-title div{
-  width: 40%;
-}
-#form-title div::before{
-  background: #56CCF2;
-}
-.form-card{
-  width: 100%;
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#contact-page-card{
   position: relative;
-  margin-bottom: 40px;
-}
-.form-card > div:not(#contact-card){
-  width: 60%;
-  background-color: #272727;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  margin-top: -20px;
-  box-shadow: 0 0 10px #56CCF2;
-  display: flex;
-}
-.form-card #contact-card{
-  border-radius: 50px;
-  width: 30%;
-  padding-left: 40px;
-  padding-right: 40px;
-  box-shadow: 0 0 10px #56CCF2;
-}
-
-#form-info{
-  width: 40%;
-  background: #3456D3;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-#form-info > h2{
-  font-size: 1.6em;
-  margin: 0;
-}
-#form-info > div{
-  height: 100%;
-  display: flex;
-  gap: 1.5rem;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.form-text{
-  box-sizing: border-box;
-  background-color: #272727;
-  padding: 1em;
-  border: 2px solid transparent;
-  border-radius: 360px;
-  margin-top: 10px;
-  margin-right: 10px;
-  outline: none;
+  width: fit-content;
+  margin: 0 20px;
   height: auto;
-  width: 100%;
-  max-width: 615px;
-  transition: all 0.5s ease;
-  position:static;
+  border-radius: 50px;
+  background: #272727;
+  padding: 15px;
   box-shadow: 0 0 10px #3456D3;
 }
-.form-text:hover{
-  cursor: pointer;
-  background-color: #303030;
+#contact-form{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  max-width: fit-content;
+  height: 100%;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
 }
-input:focus{
-  cursor: text;
-  border-color: #3456D3;
+#contact-form div{
+  width: 100%;
+  padding: 0px;
+  gap: 15px;
 }
-textarea{
-  background-color: #272727;
-  padding: 1em;
-  font-family: Arial, Verdana, Helvetica;
-  line-height: 1.4;
-  font-size: 16px;
+.row-inputs{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.row-inputs div{
+  width: 100%;
+}
+#fullname, #email, #message, #subject{
+  width: 100%;
+  background: #272727;
   border: 2px solid transparent;
-  border-radius: 15px;
-  margin-top: 10px;
-  margin-right: 10px;
-  outline: none;
-  width: 100%;
-  max-width: 615px;
-  height: 150px;
-  transition: all 0.5s ease;
-  resize: none;
   box-shadow: 0 0 10px #3456D3;
+  border-radius: 50px;
+  padding: 15px;
+  font-size: 1em;
+  transition: 0.5s;
 }
-textarea:hover{
-  cursor: pointer;
-  background-color: #303030;
+#fullname:hover,#email:hover, #message:hover, #subject:hover{
+  background: #313131;
+  border-color:#3456D3;
 }
-textarea:focus{
-  cursor: text;
-  border-color: #3456D3;
+#fullname:focus, #email:focus, #message:focus, #subject:focus{
+  background: #313131;
+  border-color:#3456D3;
+  outline: none;
 }
-.form-buttons{
-  display: flex;
-  gap: 10px;
-  max-width: 615px;
-  transition: all 0.2s;
-}
-.name-email-form{
+.subject-select{
+  position: relative;
   width: 100%;
-  display: flex;
-  gap: 20px;
 }
-.name-email-form p{
-  flex: 1;
-  width: auto;
+.subject-select::after{
+  font-size: 0.8em;
+  color: #757575;
+  content: "▼";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
 }
-.form-buttons .button1 span:first-child{
-  left: 50%;
-  transform: translate(-50%, -50%);
+#subject{
+  appearance: none;
+  border: none;
+  padding-left: 20px;
+  cursor: pointer;
+  border-radius: 100px;
+  color: #757575;
 }
-
-
-form{
-  margin: 10px auto 20px;
+#message{
+  height: 120px;
+  border-radius: 15px;
+  resize: none;
 }
-form p{
-  text-align: left;
+#subject.has-value{
+  color: white;
+}
+#subject option{
+  color: white
+}
+#subject option[value='']{
+  color: #757575;
+}
+#reset-form, #submit-form{
+  width: 100%;
+  gap: 10px;
 }
 label{
+  display: block;
   margin-left: 10px;
-}
-#contact-me{
-  align-self: center;
 }
 /* #endregion */
 
@@ -1415,6 +1437,22 @@ label{
   padding-right: 0;
 }
 
+@media screen and (max-width: 1200px){
+  #contact-form{
+    width: 100%;
+  }
+  #contact-information{
+    width: 40%;
+    height: auto;
+  }
+  #contact-box{
+    height: fit-content;
+    width: fit-content;
+    align-items: stretch;
+    justify-content: center;
+  }
+}
+
 /* ---- Tablet / medium screens ---- */
 @media screen and (max-width: 1048px){
   html, body{
@@ -1424,8 +1462,7 @@ label{
     scroll-snap-type: none;
   }
   .snap-section{
-    height: auto;
-    padding: 90px 0 30px;
+    height: fit-content;
   }
   .snap-card, .snap-cards-2{
     width: 88%;
@@ -1450,11 +1487,11 @@ label{
   #form-info, .form-card > div:not(#contact-card){
     width: 88%;
   }
-  #portfolio .portfolio-stack-card {
-    width: 100%;
-  }
   #education-card, #courses-card{
     min-height: 400px;
+  }
+  #contact-card{
+    width: 100%;
   }
   .snap-cards-nav{
     display: none;
@@ -1463,16 +1500,53 @@ label{
     opacity: 1;
     scale: 1;
   }
+  #portfolio-title-bg,
+  #portfolio-nea-bg,
+  #portfolio-epq-bg,
+  #portfolio-website-bg,
+  #portfolio-other-bg {
+    scale: 1;
+    transition: opacity 0.5s ease;
+  }
+  #snap-title, #snap-orangebg, #snap-naturebg, #snap-underwater{
+    background-image: url(images/portals.jpg);
+    transition: none;
+  }
+  .snap-section .portfolio-card, .snap-section .portfolio-stack-card{
+    opacity: 1;
+    transform: scale(1);
+    transition: .5s ease;
+  }
   #portfolio-title-bg, #portfolio-nea-bg, #portfolio-epq-bg, #portfolio-website-bg, #portfolio-other-bg{
-    position: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin: -8px;
     background-image: url(images/chessgame.png);
     filter: blur(10px);
-    height: 100%;
+  }
+}
+
+@media screen and (max-width: 980px){
+  /* Contact Page*/
+  #contact-background{
+    height: fit-content;
+    padding: 80px;
+  }
+  .row-inputs{
+    flex-direction: row;
+  }
+  #contact-form{
     width: 100%;
+    max-width: none;
+  }
+  #contact-information{
+    width: 100%;
+    min-width: 0;
+  }
+  #contact-box{
+    height: fit-content;
+    width: 100%;
+    min-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -1590,11 +1664,6 @@ label{
     gap: 20px;
     height: auto;
   }
-  .snap-section .portfolio-card, .snap-section .portfolio-stack-card{
-    opacity: 1;
-    transform: scale(1);
-    transition: .5s ease;
-  }
 }
 
 /* ---- Mobile / small screens ---- */
@@ -1677,6 +1746,17 @@ label{
   #portfolio .section-title-text {
     width: 60%;
   }
+  /* Contact Page*/
+  #contact-background{
+    padding: 10px;
+  }
+  #contact-box{
+    width: 88%;
+    min-width: 0;
+  }
+  .row-inputs{
+    flex-direction: column;
+  }
 }
 
 /* ---- Mobile / small screens ---- */
@@ -1708,9 +1788,6 @@ label{
     font-size: 0.85em;
     padding: 8px 12px;
   }
-  /* .button1{
-    font-size: 1.1em;
-  } */
   #contact-card{
     height: auto !important;
     min-height: 0 !important;
@@ -1732,10 +1809,17 @@ label{
     width: 100%;
     max-width: none;
   }
-  @media screen and (max-width: 388px){
-    #profile-card{
-      height: 340px;
-    }
+  #portfolio .section-title-text {
+    min-width: none;
+    max-width: 100% !important;
+  }
+  #contact-information{
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 388px){
+  #profile-card{
+    height: 340px;
   }
 }
 /* #endregion */
