@@ -226,9 +226,11 @@ window.addEventListener('pageshow', (e) => {
 // Contact form subject dropdown menu
 const subjectSelect = document.querySelector("#subject");
 
-subjectSelect.addEventListener("change", () => {
-  subjectSelect.classList.toggle(
-    "has-value",
-    subjectSelect.value !== ""
-  );
-});
+if (subjectSelect) {
+  subjectSelect.addEventListener("change", () => {
+    subjectSelect.classList.toggle(
+      "has-value",
+      subjectSelect.value !== ""
+    );
+  });
+}

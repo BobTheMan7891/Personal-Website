@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
     <link rel="icon" type="image/jpg" href="images/favicon.jpg" class="circleImage">
     <title>Oscar S</title>
     <link rel="stylesheet" href="style.css">
@@ -106,22 +107,22 @@
                 <form action="https://formsubmit.co/oscarsutherland08@outlook.com" method="POST" id="contact-form">
                     <div class="row-inputs">
                         <div>
-                            <label>Full Name:</label>
+                            <label for="fullname">Full Name:</label>
                             <br>
-                            <input type="text" placeholder="John Smith" id="fullname" required minlength="3" maxlength="50">
+                            <input type="text" placeholder="John Smith" id="fullname" name="Name" required minlength="3" maxlength="50">
                         </div>
                         <div>
-                            <label>Email:</label>
+                            <label for="email">Email:</label>
                             <br>
-                            <input type="email" placeholder="jsmith@gmail.com" id="email" required>
+                            <input type="email" placeholder="jsmith@gmail.com" id="email" name="Email" required>
                         </div>
                     </div>
                     <br>
                     <div>
-                        <label>Subject</label>
+                        <label for="subject">Subject</label>
                         <br>
                         <div class="subject-select">
-                            <select id="subject">
+                            <select id="subject" name="Subject" required>
                                 <option value="">-- Please Specify --</option>
                                 <option value="Freelancing">Freelancing</option>
                                 <option value="Job Offering">Job Offering</option>
@@ -131,9 +132,9 @@
                     </div>
                     <br>
                     <div>
-                        <label>Message:</label>
+                        <label for="message">Message:</label>
                         <br>
-                        <textarea type="comment" id="message" placeholder="Type your message here..."></textarea>
+                        <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
                     </div>
                     <br>
                     <div class="row-inputs">
