@@ -82,7 +82,7 @@ if (currentPage == 'about.html'){
     { threshold: 0,    id: 'portfolio-title-bg' },
     { threshold: 0.25,  id: 'portfolio-nea-bg' },
     { threshold: 0.5,  id: 'portfolio-epq-bg' },
-    { threshold: 0.75,  id: 'portfolio-website-bg' },
+    { threshold: 0.70,  id: 'portfolio-website-bg' },
     { threshold: 0.8,  id: 'portfolio-other-bg' },
   ];
   
@@ -234,3 +234,41 @@ if (subjectSelect) {
     );
   });
 }
+
+// Cursor glow effect (Services page only)
+if (currentPage == 'work.html' || currentPage == 'contact.html') {
+  const cursorGlow = document.querySelector('#cursor-glow');
+  const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
+
+  if (cursorGlow && hasFinePointer) {
+    document.addEventListener('mousemove', (e) => {
+      cursorGlow.style.transform = `translate(${e.clientX - 150}px, ${e.clientY - 150}px)`;
+      cursorGlow.classList.add('active');
+    });
+
+    document.addEventListener('mouseleave', () => {
+      cursorGlow.classList.remove('active');
+    });
+  }
+}
+
+
+// FAQ section
+let question = document.querySelectorAll(".faq-question");
+
+question.forEach(question => {
+  question.addEventListener("click", event => {
+    const active = document.querySelector(".faq-question.active");
+    if(active && active !== question ) {
+      active.classList.toggle("active");
+      active.nextElementSibling.style.maxHeight = 0;
+    }
+    question.classList.toggle("active");
+    const answer = question.nextElementSibling;
+    if(question.classList.contains("active")){
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    } else {
+      answer.style.maxHeight = 0;
+    }
+  })
+})

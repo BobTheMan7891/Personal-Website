@@ -14,6 +14,9 @@
       <div class="spinner"></div>
     </div>
 
+    <div id="services-bg"></div>
+    <div id="cursor-glow"></div>
+
     <header style="position: sticky; top: 0; z-index: 100;">
 
         <h1 class="header-text">Welcome!</h1>
@@ -37,7 +40,7 @@
             <a href="portfolio.html">
                 <li>
                     <span class="icon"><ion-icon name="grid-outline"></ion-icon></span>
-                    <span class="title">Projects</span>
+                    <span class="title">Portfolio</span>
                 </li>
             </a>
 
@@ -74,7 +77,7 @@
                         <span>Portfolio</span>
                     </button>
                 </a>
-                <a href="services.html" class="button2">
+                <a href="work.html" class="button2">
                     <button>
                         <span>Services</span>
                     </button>
@@ -98,7 +101,232 @@
 
     </header>
 
-    <main>HELLO, WORK!</main>
+    <main id="services-main">
+
+        <div class="section-title-text">
+            <p>Services</p>
+        </div>
+        <br>
+        <div id="services-intro">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti laboriosam nemo est sed tempora rem ea? Veniam, quod? Cumque incidunt harum nostrum, eaque assumenda magni dolore quos corrupti ex odio!</p>
+        </div>
+        <br>
+        <br>
+        <div class="stack-card">
+            <div class="grey-card" style="display: flex; flex-direction: column;">
+                <div id="card-title">
+                    <ion-icon name="color-palette-outline"></ion-icon>
+                    <p id="card-header">Website Design and Dev</p>
+                </div>
+                <hr>
+                <p>A custom-coded website built from scratch, not a basic drag-and-drop template. The design will be based on your brand and built to work on every device.</p>
+                <div class="pricing">
+                    <p class="cost-text">$80</p>
+                    <p class="cost-subtext"> basic</p>
+                </div>
+                <a href="work.html#packages-group" style="margin-top: auto;">
+                    <button class="button1">
+                        <span>More details</span>
+                        <span class="icon"><ion-icon name="ellipsis-horizontal"></ion-icon></span>
+                    </button>
+                </a>
+            </div>
+            <div class="grey-card" style="display: flex; flex-direction: column;">
+                <div id="card-title">
+                    <ion-icon name="cloudy-outline"></ion-icon>
+                    <p id="card-header">Website Hosting</p>
+                </div>
+                <hr>
+                <p>Ongoing hosting, backups and small content updates so your site remains online, secure and up to date. There's no need to touch an code yourself.</p>
+                <div class="pricing">
+                    <p class="cost-text">$15</p>
+                    <p class="cost-subtext"> /month</p>
+                </div>
+                <a href="contact.html" style="margin-top: auto;">
+                    <button class="button1">
+                        <span>Get a Quote</span>
+                        <span class="icon"><ion-icon name="ellipsis-horizontal"></ion-icon></span>
+                    </button>
+                </a>
+            </div>
+
+        </div>
+        <div id="packages-group">
+            <div class="package-card">
+                <div id="package-title">Basic</div>
+                <br>
+                <div class="cost-text">$80</div>
+                <br>
+                <p id="package-desc">A single, polished page. Ideal for a personal profile or simple landing page.</p>
+                <div id="package-features">
+                    <div><ion-icon name="checkmark-outline" class="features-checkmark"></ion-icon> Mobile responsive</div>
+                    <div><ion-icon name="checkmark-outline" class="features-checkmark"></ion-icon> Contact form</div>
+                    <div><ion-icon name="checkmark-outline" class="features-checkmark"></ion-icon> Basic SEO setup</div>
+                    <div><ion-icon name="checkmark-outline" class="features-checkmark"></ion-icon> 1 page</div>
+                    <div><ion-icon name="checkmark-outline" class="features-checkmark"></ion-icon> 1 round of revisions</div>
+                </div>
+                <a href="contact.html" style="width: 100%; margin-top: auto;">
+                    <button class="button1">
+                        <span>Choose basic</span>
+                        <span class="icon"><ion-icon name="ellipsis-horizontal"></ion-icon></span>
+                    </button>
+                </a>
+            </div>
+            <div class="package-card best-card">
+                <div id="best-badge">BEST OPTION</div>
+                <div id="package-title">Standard</div>
+                <br>
+                <div class="cost-text">$120</div>
+                <br>
+                <p id="package-desc">A full multi-page site with custom animations and a professional look. The best option for a small business or portfolio.</p>
+                <div id="package-features">
+                    <div><ion-icon name="checkmark-outline" class="features-checkmark"></ion-icon> All previous features</div>
+                    <div><ion-icon name="checkmark-outline" class="features-checkmark"></ion-icon> Custom Animations</div>
+                    <div><ion-icon name="checkmark-outline" class="features-checkmark"></ion-icon> Basic SEO setup</div>
+                    <div><ion-icon name="checkmark-outline" class="features-checkmark"></ion-icon> Up to 5 pages</div>
+                    <div><ion-icon name="checkmark-outline" class="features-checkmark"></ion-icon> 2 rounds of revisions</div>
+                </div>
+                <a href="contact.html" style="width: 100%; margin-top: auto;">
+                    <button class="button1">
+                        <span>Choose standard</span>
+                        <span class="icon"><ion-icon name="ellipsis-horizontal"></ion-icon></span>
+                    </button>
+                </a>
+            </div>
+            <div class="package-card">
+                <div id="package-title">Premium</div>
+                <br>
+                <div class="cost-text">$200+</div>
+                <br>
+                <p id="package-desc">A larger, more feature rich site built around your needs. Perfect for businesses that require online payments or bookings.</p>
+                <div id="package-features">
+                    <div><ion-icon name="checkmark-outline" class="features-checkmark"></ion-icon> All previous features</div>
+                    <div><ion-icon name="checkmark-outline" class="features-checkmark"></ion-icon> Payment integration (Stripe)</div>
+                    <div><ion-icon name="checkmark-outline" class="features-checkmark"></ion-icon> Consultatoion/booking system (Calendly)</div>
+                    <div><ion-icon name="checkmark-outline" class="features-checkmark"></ion-icon> 6+ pages</div>
+                    <div><ion-icon name="checkmark-outline" class="features-checkmark"></ion-icon> 3 rounds of revisions</div>
+                </div>
+                <a href="contact.html" style="width: 100%; margin-top: auto;">
+                    <button class="button1">
+                        <span>Choose premium</span>
+                        <span class="icon"><ion-icon name="ellipsis-horizontal"></ion-icon></span>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <div id="extra-services-section">
+            <div class="section-title-text" style="margin-top: 100px;">
+                <p>Additional Services</p>
+            </div>
+            <div class="extra-service-box">
+                <p><ion-icon name="document-outline"></ion-icon></p>
+                <div class="extra-service-text">
+                    <p>Additional page</p>
+                    <p>Add another page to any package after the project has started.</p>
+                </div>
+                <div class="pricing">
+                    <p class="cost-subtext">per page</p>
+                    <p class="cost-text">$30</p>
+                </div>
+            </div>
+            <div class="extra-service-box">
+                <p><ion-icon name="add-circle-outline"></ion-icon></p>
+                <div class="extra-service-text">
+                    <p>Extra revision</p>
+                    <p>Add another revision to any package.</p>
+                </div>
+                <div class="pricing">
+                    <p class="cost-subtext">per revision</p>
+                    <p class="cost-text">$20</p>
+                </div>
+            </div>
+            <div class="extra-service-box">
+                <p><ion-icon name="mail-outline"></ion-icon></p>
+                <div class="extra-service-text">
+                    <p>Newsletter Integration</p>
+                    <p>Newsletter signup form, designed and inegrated using Mailchimp (or similar).</p>
+                </div>
+                <div class="pricing">
+                    <p class="cost-subtext">from</p>
+                    <p class="cost-text">$40</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section" style="margin-top: 100px;">
+            <div class="section-title-text" style="width: 70%; margin-bottom: 20px; margin-top: 10px; text-transform: none;">
+                <p>FAQs</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-question">
+                    <p>How long does a project take?</p>
+                    <ion-icon name="add-outline"></ion-icon>
+                </div>
+                <div class="answer-container">
+                    <div class="faq-answer">Turnaround depend on your chosen package and additional services: Basic sites will typically be 1-2 weeks, Standard 2-3 weeks, and premium 3-5 weeks. These are estimates and I'll confirm a more exact timeline once we've discussed your project.</div>
+                </div>
+            </div>
+            <hr style="width: 95%;">
+            <div class="faq-container">
+                <div class="faq-question">
+                    <p>How do I place an order?</p>
+                    <ion-icon name="add-outline"></ion-icon>
+                </div>
+                <div class="answer-container">
+                    <div class="faq-answer">To get started, fill out the contact form (link below) with the service(s) you're interested in. I'll get back to you directly so we can tailor a package that fits what you need and discuss any other relevant details. I will repsond as soon as I can, usually within one or two business days.</div>
+                    <br>
+                    <a href="contact.html" style="color: #3456D3">Contact form</a>
+                </div>
+            </div>
+            <hr style="width: 95%;">
+            <div class="faq-container">
+                <div class="faq-question">
+                    <p>How does the payment work?</p>
+                    <ion-icon name="add-outline"></ion-icon>
+                </div>
+                <div class="answer-container">
+                    <div class="faq-answer">Once your package has been finalised, I'll send a secure Stripe payment link for a 50% deposit to begin the work. The remaining 50% will be due when you are happy with the result or all revisions have been exhausted.</div>
+                </div>
+            </div>
+            <hr style="width: 95%;">
+            <div class="faq-container">
+                <div class="faq-question">
+                    <p>What's not included in the price?</p>
+                    <ion-icon name="add-outline"></ion-icon>
+                </div>
+                <div class="answer-container">
+                    <div class="faq-answer">Domain registration and any paid stock images or fonts you choose aren't included. I'll help you find good free alternatives if you'd prefer to keep costs down.</div>
+                </div>
+            </div>
+            <hr style="width: 95%;">
+            <div class="faq-container">
+                <div class="faq-question">
+                    <p>Can I cancel hosting later?</p>
+                    <ion-icon name="add-outline"></ion-icon>
+                </div>
+                <div class="answer-container">
+                    <div class="faq-answer">Yes, hosting is billed on the first of every month with no lock-in contract. I'll help move your site elsewhere if you ever want to leave.</div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div style="width: 50%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <p style="letter-spacing: 0.3em; text-transform: uppercase; font-size: 1.2em; text-align: center;">Have a project in mind?</p>
+            <br>
+            <div style="width: 40%;">
+                <a href="contact.html" style="margin-top: auto;">
+                    <button id="epq-button" class="button1">
+                        <span>Get in Touch</span>
+                        <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+    </main>
 
     <footer>
         <p>email: <a href="mailto:oscarsutherland08@outlook.com" class="white-link">oscarsutherland08@outlook.com</a></p>

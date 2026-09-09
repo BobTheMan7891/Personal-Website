@@ -15,6 +15,9 @@
       <div class="spinner"></div>
     </div>
 
+    <div id="services-bg"></div>
+    <div id="cursor-glow"></div>
+
     <header style="position: sticky; top: 0; z-index: 100;">
 
         <h1 class="header-text">Welcome!</h1>
@@ -38,7 +41,7 @@
             <a href="portfolio.html">
                 <li>
                     <span class="icon"><ion-icon name="grid-outline"></ion-icon></span>
-                    <span class="title">Projects</span>
+                    <span class="title">Portfolio</span>
                 </li>
             </a>
 
@@ -75,7 +78,7 @@
                         <span>Portfolio</span>
                     </button>
                 </a>
-                <a href="services.html" class="button2">
+                <a href="work.html" class="button2">
                     <button>
                         <span>Services</span>
                     </button>
@@ -103,8 +106,8 @@
 
         <div id="contact-background">
             <!-- Contact title -->
-            <div id="contact-title" style="margin-top: 50px;">
-                <h1>Contact Me</h1>
+            <div id="contact-title">
+                <p>Contact Me</p>
             </div>
 
             <!-- Contact Box -->
@@ -118,24 +121,24 @@
                 <form action="https://formsubmit.co/oscarsutherland08@outlook.com" method="POST" id="contact-form">
                     <div class="row-inputs">
                         <div>
-                            <label for="fullname">Full Name:</label>
+                            <label>Full Name:</label>
                             <br>
                             <input type="text" placeholder="John Smith" id="fullname" name="Name" required minlength="3" maxlength="50">
                         </div>
                         <div>
-                            <label for="email">Email:</label>
+                            <label>Email:</label>
                             <br>
                             <input type="email" placeholder="jsmith@gmail.com" id="email" name="Email" required>
                         </div>
                     </div>
                     <br>
                     <div>
-                        <label for="subject">Subject</label>
+                        <label>Subject</label>
                         <br>
                         <div class="subject-select">
                             <select id="subject" name="Subject" required>
                                 <option value="">-- Please Specify --</option>
-                                <option value="Freelancing">Freelancing</option>
+                                <option value="Services">Services</option>
                                 <option value="Job Offering">Job Offering</option>
                                 <option value="Other">Other</option>
                             </select>
@@ -143,7 +146,7 @@
                     </div>
                     <br>
                     <div>
-                        <label for="message">Message:</label>
+                        <label>Message:</label>
                         <br>
                         <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
                     </div>
@@ -156,7 +159,7 @@
              </div>
 
             <!-- Contact Card-->
-             <div id="contact-page-card" style="margin-bottom: 50px;">
+             <div id="contact-card" class="grey-card contact-page-card">
                 <ul class="contact-list">
                     <li>
                         <a href="https://wa.me/+971568157979" target="_blank">
@@ -198,16 +201,8 @@
                             <ion-icon name="logo-github" class="contact-card-icons-hover"></ion-icon>
                         </a>
                     </li>
-                    <li>
-                        <a href="contact.html">
-                            <ion-icon name="ellipsis-horizontal" class="contact-card-icons"></ion-icon>
-                            <div class="contact-outer"></div>
-                            <div class="contact-inner"></div>
-                            <ion-icon name="ellipsis-horizontal" class="contact-card-icons-hover"></ion-icon>
-                        </a>
-                    </li>
                 </ul>
-             </div>
+            </div>
         </div>
 
 
