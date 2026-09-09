@@ -1917,7 +1917,11 @@ label{
   }
   .snap-section{
     height: auto;
-    padding: 20px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+  #about-snap-card, #education-course-snap-card, #other-snap-card{
+    margin-top: 0;
   }
   .snap-card, .snap-cards-2{
     width: 90% !important;
@@ -1954,8 +1958,14 @@ label{
   #portfolio .home-portfolio-title{
     padding-top: 10px;
   }
+  #portfolio .snap-section{
+    padding-top: 0;
+  }
+  .portfolio-card, .portfolio-stack-card{
+    margin-bottom: 0;
+  }
   #portfolio .portfolio-stack-card{
-    margin-top: 30px;
+    margin-top: 0;
   }
   #courses-card, #education-card{
     min-height: 0;
@@ -1992,7 +2002,8 @@ label{
   /* About page snap cards: stack and let content size the card */
   .snap-section{
     height: auto;
-    padding: 20px;
+    padding: 0 20px;
+    margin-bottom: 20px;
   }
   .snap-card, .snap-cards-2{
     width: 100% !important;
@@ -2017,7 +2028,7 @@ label{
     flex-direction: column;
     width: 100% !important;
     height: auto;
-    margin: 0px auto 30px;
+    margin: 0px auto;
     padding: 20px;
     padding-top: 0;
     padding-bottom: 10px;
@@ -2151,4 +2162,3 @@ label{
   }
 }
 /* #endregion */
-
