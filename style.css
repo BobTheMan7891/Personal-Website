@@ -21,11 +21,7 @@ img{
 }
 main{
   padding: 8px;
-  background-image:
-    radial-gradient(circle at 12% 18%, rgba(86, 204, 242, 0.16), transparent 32%),
-    radial-gradient(circle at 88% 12%, rgba(52, 86, 211, 0.22), transparent 38%),
-    radial-gradient(circle at 78% 82%, rgba(86, 204, 242, 0.14), transparent 34%),
-    radial-gradient(circle at 15% 85%, rgba(52, 86, 211, 0.18), transparent 34%)
+  background:#0b0b2b;
 }
 hr{
   width: 100%;
@@ -1766,7 +1762,9 @@ label{
     width: 88%;
   }
   .portfolio-stack-card{
-    width: 88%;
+    min-width: none;
+    max-width: none;
+    width: 100%;
   }
   .section-title-text, #section-title-scroll-text{
     width: 60%;
@@ -1906,6 +1904,9 @@ label{
 }
 
 @media screen and (max-width: 850px){
+  #section-title-scroll-text{
+    display: none;
+  }
   #contact-main{
     height: auto;
     min-height: calc(100dvh - 70px);
