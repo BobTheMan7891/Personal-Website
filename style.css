@@ -612,6 +612,9 @@ html{
 #cursor-glow.active{
   opacity: 1;
 }
+.construction-glow#cursor-glow{
+  z-index: 11;
+}
 @media (pointer: coarse){
   #cursor-glow{
     display: none;
@@ -1052,7 +1055,6 @@ td{
   justify-content: center;
   align-items: center;
   height: 100%;
-  height: auto;
   padding: 12px 8px;
   margin: 0;
 }
@@ -1698,12 +1700,45 @@ label{
 }
 /* #endregion */
 
+.construction-overlay{
+  height: 100dvh;
+  width: 100dvw;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background-color: #0b0b2b;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(86, 204, 242, 0.16), transparent 32%),
+    radial-gradient(circle at 88% 12%, rgba(52, 86, 211, 0.22), transparent 38%),
+    radial-gradient(circle at 78% 82%, rgba(86, 204, 242, 0.14), transparent 34%),
+    radial-gradient(circle at 15% 85%, rgba(52, 86, 211, 0.18), transparent 34%),
+    radial-gradient(rgba(255, 255, 255, 0.123) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 26px 26px;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.construction-title{
+  position: relative;
+  top: -70px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+.construction-text{
+  position: relative;
+  font-size: 1.2em;
+  top: -70px;
+}
+
 /* #region Responsive layout */
 
 #portfolio .section-title-text {
   width: 40%;
 }
-#portfolio .portfolio-stack-card {
+#portfolio > section:not(.snap-section) .portfolio-stack-card {
   width: 100%;
   max-width: none;
   margin-left: 0;
@@ -1747,6 +1782,30 @@ label{
   html{
     scroll-snap-type: none;
   }
+  header{
+    justify-content: space-between;
+  }
+  #portfolio .section-title-text {
+    width: 50%;
+  }
+  .ham-menu{
+    display: flex;
+    margin-left: auto;
+    margin-right: 10px;
+    height: 40px;
+    width: 40px;
+    flex-shrink: 0;
+  }
+  #nav-menu{
+    display: none;
+  }
+  .portfolio-text#portfolio-stack-text{
+    max-width: none;
+    margin: 0;
+  }
+  .portfolio-stack-card{
+    gap: 20px;
+  }
   .snap-section{
     height: fit-content;
   }
@@ -1761,10 +1820,8 @@ label{
   .portfolio-card, .portfolio-stack-card{
     width: 88%;
   }
-  .portfolio-stack-card{
-    min-width: none;
+  .portfolio-stack-card div{
     max-width: none;
-    width: 100%;
   }
   .section-title-text, #section-title-scroll-text{
     width: 60%;
@@ -1947,6 +2004,11 @@ label{
     padding-top: 0;
     padding-bottom: 10px;
   }
+  .portfolio-stack-card{
+    padding: 0;
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
   .portfolio-stack-card div{
     max-width: none;
   }
@@ -1985,20 +2047,6 @@ label{
   header{
     justify-content: space-between;
   }
-  #portfolio .section-title-text {
-    width: 50%;
-  }
-  .ham-menu{
-    display: flex;
-    margin-left: auto;
-    margin-right: 10px;
-    height: 40px;
-    width: 40px;
-    flex-shrink: 0;
-  }
-  #nav-menu{
-    display: none;
-  }
 
   /* About page snap cards: stack and let content size the card */
   .snap-section{
@@ -2031,6 +2079,11 @@ label{
     height: auto;
     margin: 0px auto;
     padding: 20px;
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+  .portfolio-stack-card{
+    padding: 0;
     padding-top: 0;
     padding-bottom: 10px;
   }
