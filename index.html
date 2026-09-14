@@ -15,6 +15,9 @@
       <div class="spinner"></div>
     </div>
 
+    <div id="services-bg"></div>
+    <div id="cursor-glow"></div>
+
     <header style="position: sticky; top: 0; z-index: 100;">
 
         <h1 class="header-text">Welcome!</h1>
@@ -106,18 +109,18 @@
             <tr>
                 <!-- Profile card -->
                 <td rowspan="1" height="350">
-                    <div id="profile-card" class="blue-card auto-show-load">
+                    <div id="profile-card" class="blue-card auto-show-load hover-card-light">
                         <div id="profile-banner"></div>  
                         <img src="images/favicon.jpg" alt="portrait" id="profile-portrait">
                         <div id="profile-text">
-                            <h1 id="profile-h1">Oscar Sutherland</h1>
+                            <p id="profile-h1">Oscar Sutherland</p>
                         </div>
                     </div>
                 </td>
 
                 <!-- About card -->
                 <td rowspan="1" height="350">
-                    <div id="about-card" class="grey-card auto-show-load">
+                    <div id="about-card" class="grey-card auto-show-load hover-card-dark">
                         <h1 id="about-h1">About</h1> 
                         <hr id="about-hr">
                         <p id="about-p">
@@ -134,14 +137,14 @@
                 </td>
 
                 <!-- Photo card -->
-                <td rowspan="3" height="700" id="photo-card-td" class="auto-show-load">
+                <td rowspan="3" height="700" id="photo-card-td" class="auto-show-load hover-card-photo">
                     <div id="photo-card" style="background-image: url(images/homephoto.png);"></div>
                 </td>
             </tr>
             <tr>
                 <!-- CV card -->
                 <td rowspan="1" height="250">
-                    <div id="cv-card" class="grey-card auto-show-load">
+                    <div id="cv-card" class="grey-card auto-show-load hover-card-dark">
                         <h1 id="cv-h1">CV</h1>
                         <hr id="cv-hr">
                         <p id="about-p" style="margin-top: 20px;">Interested in part-time jobs, internships & work experience.</p>
@@ -162,7 +165,7 @@
 
                 <!-- Skills card -->
                 <td rowspan="2" height="350">
-                    <div id="skills-card" class="blue-card auto-show-load">
+                    <div id="skills-card" class="blue-card auto-show-load hover-card-light">
                         <h1 id="skills-h1">Skills</h1>
                         <hr>
                         <div id="skills-list">
@@ -184,7 +187,7 @@
 
                 <!-- Contact card -->
                 <td height="20">
-                    <div id="contact-card" class="grey-card auto-show-load">
+                    <div id="contact-card" class="grey-card auto-show-load hover-card-dark">
                         <ul class="contact-list">
                             <li>
                                 <a href="https://wa.me/+971568157979" target="_blank">
@@ -250,9 +253,9 @@
             </div>
         </div>
 
-        <section style="display: flex; width: 100%; justify-content: center;">
+        <section style="display: flex; width: 100%; height: 100%; justify-content: center;">
             <div class="portfolio-stack-card" style="margin: 0;">
-                <div class="portfolio-text auto-show" style="padding-top: 10px;">
+                <div class="portfolio-text auto-show hover-card-dark" style="padding-top: 10px;">
                     <h1 class="portfolio-card-h1">NEA</h1>
                     <hr class="portfolio-hr">
                     <p>
@@ -266,7 +269,7 @@
                         </button>
                     </a>
                 </div>
-                <div class="portfolio-text auto-show" style="padding-top: 10px;">
+                <div class="portfolio-text auto-show hover-card-dark" style="padding-top: 10px;">
                     <h1 class="portfolio-card-h1">EPQ</h1>
                     <hr class="portfolio-hr">
                     <p>
@@ -280,7 +283,7 @@
                         </button>
                     </a>
                 </div>
-                <div class="portfolio-text auto-show" style="padding-top: 10px;">
+                <div class="portfolio-text auto-show hover-card-dark" style="padding-top: 10px;">
                     <h1 class="portfolio-card-h1">This Website!</h1>
                     <hr class="portfolio-hr">
                     <p>
@@ -298,10 +301,78 @@
         </section>
     </section>
 
+    <section class="services-section-home">
+        <div class="section-title-text auto-show">
+            <p>Services</p>
+        </div>
+        <br>
+        <div id="services-intro" class="auto-show">
+            <p>Everything you need to get a custom website live and running! No generic AI templates or fiddling with clunky builders like Wix or Base44, just hand-coded work built around your brand.</p>
+        </div>
+        <br>
+        <br>
+        <div class="stack-card auto-show">
+            <div class="grey-card hover-card-dark" style="display: flex; flex-direction: column;">
+                <div id="card-title">
+                    <ion-icon name="color-palette-outline"></ion-icon>
+                    <p id="card-header">Website Design and Dev</p>
+                </div>
+                <hr>
+                <p>A custom-coded website built from scratch, not a basic drag-and-drop template. The design will be based on your brand and built to work on every device.</p>
+                <div class="pricing">
+                    <p class="cost-text">$80</p>
+                    <p class="cost-subtext"> basic</p>
+                </div>
+                <a href="work.html#packages-group" style="margin-top: auto;">
+                    <button class="button1">
+                        <span>More details</span>
+                        <span class="icon"><ion-icon name="ellipsis-horizontal"></ion-icon></span>
+                    </button>
+                </a>
+            </div>
+            <div class="grey-card hover-card-dark" style="display: flex; flex-direction: column;">
+                <div id="card-title">
+                    <ion-icon name="cloudy-outline"></ion-icon>
+                    <p id="card-header">Website Hosting</p>
+                </div>
+                <hr>
+                <p>Ongoing hosting, backups and site management so your site remains online, secure and up to date. There's no need to touch any code yourself.</p>
+                <div class="pricing">
+                    <p class="cost-text">$15</p>
+                    <p class="cost-subtext"> /month</p>
+                </div>
+                <a href="contact.html" style="margin-top: auto;">
+                    <button class="button1">
+                        <span>Get a Quote</span>
+                        <span class="icon"><ion-icon name="ellipsis-horizontal"></ion-icon></span>
+                    </button>
+                </a>
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <div style="width: 50%; display: flex; justify-content: center; align-items: center; flex-direction: column;" class="auto-show">
+            <p style="letter-spacing: 0.3em; text-transform: uppercase; font-size: 1.2em; text-align: center;">Want to Know More?</p>
+            <br>
+            <div style="width: 40%;">
+                <a href="work.html" style="margin-top: auto;">
+                    <button id="epq-button" class="button1">
+                        <span>Read More</span>
+                        <span class="icon"><ion-icon name="ellipsis-horizontal"></ion-icon></span>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <p>email: <a href="mailto:oscarsutherland08@outlook.com" class="white-link">oscarsutherland08@outlook.com</a></p>
         <p>Designed and hand-coded by Oscar Sutherland</p>
         <p>&copy; All Rights Reserved 2026</p>
+        <p>Terms & Conditions</p>
+        <p>Privacy Policy</p>
     </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>

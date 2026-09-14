@@ -235,8 +235,8 @@ if (subjectSelect) {
   });
 }
 
-// Cursor glow effect (Services page only)
-if (currentPage == 'work.html' || currentPage == 'contact.html') {
+// Cursor glow effect (work, contact and index pages only)
+if (currentPage == 'work.html' || currentPage == 'contact.html' || currentPage == 'index.html') {
   const cursorGlow = document.querySelector('#cursor-glow');
   const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
 

@@ -365,6 +365,15 @@ html{
   padding: 50px;
   min-height: calc(100vh - 70px);
 }
+.services-section-home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 50px;
+  min-height: calc(100vh - 70px);
+}
 #services-bg{
   position: fixed;
   inset: 0;
@@ -475,7 +484,7 @@ html{
   border-radius: 360px;
   font-size: 0.75em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.3em;
   font-weight: 600;
   text-align: center;
   width: fit-content;
@@ -743,9 +752,15 @@ header{
 /* #endregion */
 
 /* #region Pages */
+#index-main{
+  background: #0b0b2b;
+}
 #portfolio{
   width: 100%;
-  padding: 20px;
+  padding: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  height: fit-content;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -833,6 +848,7 @@ td{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: 0 0 10px #56CCF2;
 }
 #photo-card::before{
   content: '';
@@ -845,6 +861,7 @@ td{
   border-radius: 15px;
   filter: blur(5px);
   z-index: -1;
+  transition: all 0.3s ease;
 }
 
 
@@ -900,9 +917,8 @@ td{
   margin-bottom: 0;
   margin-right: 10px;
   font-size: 1.5em;
-  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.3em;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -924,7 +940,7 @@ td{
   margin-top: 0px;
   font-weight: 100;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.3em;
 }
 #about-hr{
   margin-top: -5px;
@@ -955,7 +971,7 @@ td{
   margin: 0;
   font-weight: 100;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.3em;
 }
 #cv-hr{
   margin-bottom: -10px;
@@ -1177,7 +1193,7 @@ td{
   margin: 0;
   font-weight: 100;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.3em;
 }
 #skills-list{
   flex: 1;
@@ -1192,6 +1208,11 @@ td{
   background: #3456D3;
   padding: 10px 15px;
   border-radius: 360px;
+  transition: all 0.3s ease;
+}
+.skills-pill:hover{
+  box-shadow: 0 0 20px #3456D3;
+  cursor: default;
 }
 
 /* Photo Card */
@@ -1265,7 +1286,7 @@ td{
 #nav-menu li .title{
   color: white;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.3em;
   transform: scale(0);
   transition: 0.2s;
   transition-delay: 0s;
@@ -1492,7 +1513,7 @@ td{
   font-size: 1.2em;
   font-weight: 100;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.3em;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -1500,7 +1521,7 @@ td{
   font-size: 1.2em;
   font-weight: 100;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.3em;
   padding-top: 0;
   padding-bottom: 10px;
 }
@@ -1576,7 +1597,7 @@ td{
   z-index: -1;
 }
 #contact-title h1{
-  letter-spacing: 0.1em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   margin: 0;
   z-index: 1;
@@ -1774,6 +1795,22 @@ label{
   }
 }
 /*#endregion*/
+
+.hover-card-light, .hover-card-dark{
+  transition: all 0.3s ease;
+}
+.hover-card-light:hover{
+  transform: scale(1.01);
+  box-shadow: 0 0 20px #56CCF2;
+}
+.hover-card-dark:hover{
+  transform: scale(1.01);
+  box-shadow: 0 0 20px #3456D3;
+}
+#photo-card:hover::before{
+  filter: blur(15px);
+}
+
 
 /* #region Responsive layout */
 
