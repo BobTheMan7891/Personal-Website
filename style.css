@@ -21,7 +21,10 @@ img{
 }
 main{
   padding: 8px;
-  background:#0b0b2b;
+  background: transparent;
+}
+#contact-page main{
+  background: transparent;
 }
 hr{
   width: 100%;
@@ -403,7 +406,7 @@ html{
 .stack-card{
   display: flex;
   width: 70%;
-  height: 400px;
+  height: 40vh;
   min-height: fit-content;
   gap: 20px;
 }
@@ -1700,6 +1703,7 @@ label{
 }
 /* #endregion */
 
+/*#region Construction Page*/
 .construction-overlay{
   height: 100dvh;
   width: 100dvw;
@@ -1732,6 +1736,42 @@ label{
   font-size: 1.2em;
   top: -70px;
 }
+/*#endregion*/
+
+/*#region Scroll Animation*/
+.auto-show{
+  animation: text-appear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 60vh;
+}
+
+@keyframes text-appear{
+  from{
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.auto-show-load{
+  animation: text-appear-load 0.5s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes text-appear-load{
+  from{
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+/*#endregion*/
 
 /* #region Responsive layout */
 
