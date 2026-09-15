@@ -138,7 +138,9 @@
 
                 <!-- Photo card -->
                 <td rowspan="3" height="700" id="photo-card-td" class="auto-show-load hover-card-photo">
-                    <div id="photo-card" style="background-image: url(images/homephoto.png);"></div>
+                    <div id="photo-card" style="background-image: url(images/homephoto.png);">
+                        <div class="photo-card-img"></div>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -246,11 +248,9 @@
 
     </main>
 
-    <section id="portfolio" style="background-image: url(images/portals.jpg); align-content: center; align-items: center; display: flex; flex-direction: column;">
-        <div class="home-portfolio-title">
-            <div class="section-title-text auto-show" id="portfolio-section-title">
-                <p>Portfolio</p>
-            </div>
+    <section id="portfolio" style="background-image: url(images/portals.jpg); align-content: center; align-items: center; display: flex; flex-direction: column; padding: 20px;">
+        <div id="contact-title" class="auto-show-load" style="margin-bottom: 30px;">
+            <p>Portfolio</p>
         </div>
 
         <section style="display: flex; width: 100%; height: 100%; justify-content: center;">
@@ -353,10 +353,10 @@
         <br>
         <br>
         <br>
-        <div style="width: 50%; display: flex; justify-content: center; align-items: center; flex-direction: column;" class="auto-show">
+        <div class="more-text-button auto-show">
             <p style="letter-spacing: 0.3em; text-transform: uppercase; font-size: 1.2em; text-align: center;">Want to Know More?</p>
             <br>
-            <div style="width: 40%;">
+            <div class="services-more-button">
                 <a href="work.html" style="margin-top: auto;">
                     <button id="epq-button" class="button1">
                         <span>Read More</span>

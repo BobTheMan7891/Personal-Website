@@ -115,7 +115,7 @@ html{
   border-radius: 15px;
   box-shadow: 0 0 10px #56CCF2;
   padding: 20px;
-  width: 70%;
+  width: 60%;
   height: 70%;
 }
 #about-snap-card{
@@ -603,12 +603,23 @@ html{
   line-height: 1.5em;
 }
 
+.more-text-button{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.services-more-button{
+  width: 40%;
+}
 
 /*#endregion*/
 
 /*#region Cursor Glow */
 #cursor-glow{
   position: fixed;
+  display: none;
   top: 0;
   left: 0;
   width: 300px;
@@ -626,11 +637,6 @@ html{
 }
 .construction-glow#cursor-glow{
   z-index: 11;
-}
-@media (pointer: coarse){
-  #cursor-glow{
-    display: none;
-  }
 }
 /*#endregion*/
 
@@ -849,6 +855,7 @@ td{
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: 0 0 10px #56CCF2;
+  z-index: 1;
 }
 #photo-card::before{
   content: '';
@@ -861,7 +868,21 @@ td{
   border-radius: 15px;
   filter: blur(5px);
   z-index: -1;
+  pointer-events: none;
   transition: all 0.3s ease;
+}
+.photo-card-img{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  transition: 0.5s;
+  background-image: url(images/homephoto.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 10px #56CCF2;
+  z-index: 1;
 }
 
 
@@ -1286,7 +1307,7 @@ td{
 #nav-menu li .title{
   color: white;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.1em;
   transform: scale(0);
   transition: 0.2s;
   transition-delay: 0s;
@@ -1475,7 +1496,7 @@ td{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 75%;
+  height: 70%;
   width: 70%;
   max-width: none;
   margin: 0;
@@ -1799,16 +1820,25 @@ label{
 .hover-card-light, .hover-card-dark{
   transition: all 0.3s ease;
 }
-.hover-card-light:hover{
-  transform: scale(1.01);
-  box-shadow: 0 0 20px #56CCF2;
-}
-.hover-card-dark:hover{
-  transform: scale(1.01);
-  box-shadow: 0 0 20px #3456D3;
-}
-#photo-card:hover::before{
-  filter: blur(15px);
+
+@media (pointer:fine){
+  #cursor-glow{
+    display: block;
+  }
+  .hover-card-light:hover{
+    scale: 1.01;
+    box-shadow: 0 0 20px #56CCF2;
+  }
+  .hover-card-dark:hover{
+    scale: 1.01;
+    box-shadow: 0 0 20px #3456D3;
+  }
+  #photo-card:hover{
+    scale: 1.01;
+  }
+  #photo-card:hover::before{
+    filter: blur(15px);
+  }
 }
 
 
@@ -1826,6 +1856,13 @@ label{
 #portfolio {
   padding-left: 0;
   padding-right: 0;
+}
+
+@media screen and (max-width: 1260px){
+  .contact-list li{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 @media screen and (max-width: 1200px){
@@ -1849,6 +1886,9 @@ label{
     width: 100%;
   }
   .faq-section{
+    width: 100%;
+  }
+  .extra-service-box{
     width: 100%;
   }
 }
@@ -1880,7 +1920,7 @@ label{
   }
   .portfolio-text#portfolio-stack-text{
     max-width: none;
-    margin: 0;
+    margin: 0px;
   }
   .portfolio-stack-card{
     gap: 20px;
@@ -1944,6 +1984,16 @@ label{
   #portfolio-title-bg, #portfolio-nea-bg, #portfolio-epq-bg, #portfolio-website-bg, #portfolio-other-bg{
     background-image: url(images/chessgame.png);
     filter: blur(10px);
+  }
+  .more-text-button{
+    width: 100%;
+  }
+  #packages-group{
+    flex-direction: column;
+    gap: 30px;
+  }
+  .package-card{
+    width: 80%;
   }
 }
 
@@ -2030,15 +2080,16 @@ label{
   #profile-h1{
     margin-bottom: 12px;
   }
-  #packages-group{
-    flex-direction: column;
-    gap: 30px;
+}
+@media screen and (max-width: 854px){
+  .extra-services-price{
+    display: none;
   }
-  .package-card{
-    width: 550px;
+  .extra-service-box{
+    min-height: fit-content;
+    padding: 20px;
   }
 }
-
 @media screen and (max-width: 850px){
   #section-title-scroll-text{
     display: none;
@@ -2118,6 +2169,15 @@ label{
     flex-wrap: wrap;
     gap: 20px;
     height: auto;
+  }
+}
+@media screen and (max-width: 800px){
+  .stack-card{
+    flex-direction: column;
+    gap: 30px;
+  }
+  .package-card{
+    width: 100%;
   }
 }
 
@@ -2200,6 +2260,21 @@ label{
     width: 100%;
   }
 }
+@media screen and (max-width: 610px){
+  .contact-page-card .contact-list li{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+@media screen and (max-width: 580px){
+  .contact-list li{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .services-more-button{
+    width: 100%;
+  }
+}
 
 @media screen and (max-width: 560px){
   #portfolio .section-title-text {
@@ -2223,6 +2298,15 @@ label{
   }
   .row-inputs{
     flex-direction: column;
+  }
+  .services-section-home{
+    padding: 20px;
+  }
+  #services-intro{
+    width: 100%;
+  }
+  #services-main{
+    padding: 20px;
   }
 }
 
@@ -2282,6 +2366,15 @@ label{
   }
   #contact-information{
     font-size: 0.8em;
+  }
+  #profile-card{
+    height: 340px;
+  }
+}
+@media screen and (max-width: 410px){
+  .contact-list li{
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 @media screen and (max-width: 392px){
